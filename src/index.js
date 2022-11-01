@@ -42,7 +42,7 @@ function App() {
       <BrowserRouter>
         <Routes>
             <Route path="/" element={<Form/>} />
-            <Route exact path="/menu" element={<Menu />} />
+            <Route path="/menu" element={<Menu />} />
             <Route path="/category" element={<Category />} />
             <Route path="/scoreBoard" element={<ScoreBoard/>}/>
             <Route path="/math" element={<MathQuiz/>}/>
