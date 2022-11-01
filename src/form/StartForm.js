@@ -32,8 +32,8 @@ const Form = (props) => {
     }else {
     //console.log("Name: -> ", paramName)
     //console.log("Age: -> ", paramAge)
-    history.push({ pathname: '/menu', search: `?name=${ paramName }&age=${ paramAge }`});
-    history.go(0);
+    //history.push({ pathname: '/menu', search: `?name=${ paramName }&age=${ paramAge }`});
+    //history.go(0);
     } 
   }
 
@@ -53,7 +53,8 @@ const Form = (props) => {
                           <h3>Name : </h3> <input type="text" name='name' className="input-name" onChange={handleChange} />    
                           <h3>Age : </h3> <input type="number" name='age'
                           className="input-name" onChange={handleChange}/> 
-                          <button type="submit" className="btn-accept">Submit</button>   
+                          <Link to={`menu/${details.name}/${details.age}`} 
+                          className="btn-accept">Submit</Link>   
                       </form>
                 </div>
               </div>

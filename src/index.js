@@ -42,7 +42,7 @@ function App() {
       <BrowserRouter>
         <Routes>
             <Route path="/" element={<Form/>} />
-            <Route path="/menu" element={<Menu />} />
+            <Route path="/menu/:name/:age" element={<Menu />} />
             <Route path="/category" element={<Category />} />
             <Route path="/scoreBoard" element={<ScoreBoard/>}/>
             <Route path="/math" element={<MathQuiz/>}/>
@@ -52,6 +52,7 @@ function App() {
             <Route path="/history" element={<HistoryQuiz/>}/>
             <Route path="/quizScie" element={<Quiz_Scie />} />
             <Route path="/quizHistory" element={<QuizHistory/>} />
+            <Route path="*" element={<p>ERROR NOT FOUND</p>} />
         </Routes>
       </BrowserRouter>
       </header>

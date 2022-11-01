@@ -2,11 +2,15 @@ import { Link , useParams} from 'react-router-dom';
 import harut from './logo.png';
 
 const Menu = ({data}) => {
-    const params = new Proxy(new URLSearchParams(window.location.search), {
-        get: (searchParams, prop) => searchParams.get(prop),
-      });
-    const name = params.name;
-    const age  = params.age;
+    // const params = new Proxy(new URLSearchParams(window.location.search), {
+    //     get: (searchParams, prop) => searchParams.get(prop),
+    //   });
+    const {name, age} = useParams()
+    // const {name} = useParams()
+    // const {age } = useParams()
+    // console.log(name , age)
+    // console.log(useParams())
+    
 
     return (
         <nav className="menu">
