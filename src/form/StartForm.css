@@ -1,0 +1,86 @@
+/* Menu */
+
+* {
+    /* overflow-y: hidden; Hide vertical scrollbar */
+    /*overflow-x: hidden; Hide horizontal scrollbar */
+
+  }
+/* Form */
+.container-form {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 2rem;
+    margin-top: 1vh;
+  }
+  
+.appForm {
+    background-image: url(../img/bg.png);
+    position:fixed;
+    min-height: 100%;
+    min-width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.input-name {
+    width: 320px;
+    height:50px;
+    padding:5px;
+    text-align: center;
+    color:black;
+    border:none;
+    outline:0;
+    background:
+      linear-gradient(black,black) top   /calc(100% - 30px) 1px,
+      linear-gradient(black,black) bottom/calc(100% - 30px) 1px,
+      linear-gradient(black,black) left  /1px calc(100% - 30px),
+      linear-gradient(black,black) right /1px calc(100% - 30px),
+      
+      linear-gradient(to bottom right,
+        transparent calc(50% - 1px),black,transparent calc(50% + 1px))
+        top left/15px 15px,
+      linear-gradient(to bottom right,
+        transparent calc(50% - 1px),black,transparent calc(50% + 1px))
+        bottom right/15px 15px,
+      linear-gradient(to bottom left,
+        transparent calc(50% - 1px),black,transparent calc(50% + 1px))
+        top right/15px 15px,
+      linear-gradient(to bottom left,
+        transparent calc(50% - 1px),black,transparent calc(50% + 1px))
+        bottom left/15px 15px;  
+   background-repeat:no-repeat;
+}
+
+ /* General Button Style */
+
+ .btn-accept {
+    font-size: 2.4rem;
+    padding: 2rem 0;
+    width: 30rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: rgb(28, 26, 26);
+    background: linear-gradient(90deg, rgb(18, 92, 255) 0%, rgb(0, 102, 255) 100%);
+    border-radius: 9px;
+}
+
+.btn-accept:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(8, 114, 244, 0.6);
+    transition: transform 150ms;
+    transform: scale(1.03);
+}
+
+.btn-accept[disabled]:hover {
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+

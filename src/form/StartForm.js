@@ -1,0 +1,66 @@
+import React, { useRef, useState } from "react";
+import { createSearchParams, Link , useParams, useNavigate} from 'react-router-dom';
+import harut from '../img/logo.png';
+import { history } from '../utils/history';
+import './StartForm.css';
+import Menu from './Menu';
+const Form = (props) => {
+  const [details, setDetails] = useState({
+    name: "",
+    age: ""
+  })
+
+  //const [isFormVisible, setIsFormVisible] = useState(true);
+  const handleChange = (e) => {
+    //console.log(e.target);
+    const {name, value} = e.target;
+    console.log(name, value);
+    setDetails((prev)=> {
+        return {...prev, [name]: value}
+    })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(details)
+    //setIsFormVisible(false);
+    const paramName = details.name;
+    const paramAge = details.age;
+
+    if( paramName === "" || paramAge === "") {
+      alert("NO INPUT")
+    }else {
+    //console.log("Name: -> ", paramName)
+    //console.log("Age: -> ", paramAge)
+    history.push({ pathname: '/menu', search: `?name=${ paramName }&age=${ paramAge }`});
+    history.go(0);
+    } 
+  }
+
+    return (
+        <div className="appForm">
+             
+             <div className="container-form">
+             <img src={harut} style={{
+                        width: 600,
+                        height: 700,
+                        marginTop: 60
+                    }} alt="logo" />
+                <div id="home" className="flex-column flex-center">   
+                    <h1>WELCOME!!</h1>
+                    <>{/*FORM START*/}</>
+                      <form onSubmit={handleSubmit}>
+                          <h3>Name : </h3> <input type="text" name='name' className="input-name" onChange={handleChange} />    
+                          <h3>Age : </h3> <input type="number" name='age'
+                          className="input-name" onChange={handleChange}/> 
+                          <button type="submit" className="btn-accept">Submit</button>   
+                      </form>
+                </div>
+              </div>
+                
+        </div>
+    );
+}
+
+
+export default Form;
