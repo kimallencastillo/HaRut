@@ -143,7 +143,6 @@ const MathQuiz = (props) => {
             />RECOMMENDED </span>}
             </div>
 
-
         </div>
       </div>
     </nav>
