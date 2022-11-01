@@ -32,15 +32,16 @@ import QuizHistory from './form/subject/history/QuizHistory';
 // Menu
 function App() {
   const currentPage = window.location.pathname;
-  if(currentPage === '/') {
-    history.push('/form');
-    history.go(0)
-  }
+  //if(currentPage === '/') {
+  //  history.push('/form');
+  //  history.go(0)
+  //}
   return (
     <div className="App">   
       <header className="App-header">
       <BrowserRouter>
         <Routes>
+            <Route path="/" element={<Form/>} />
             <Route exact path="/menu" element={<Menu />} />
             <Route path="/category" element={<Category />} />
             <Route path="/scoreBoard" element={<ScoreBoard/>}/>
@@ -51,7 +52,6 @@ function App() {
             <Route path="/history" element={<HistoryQuiz/>}/>
             <Route path="/quizScie" element={<Quiz_Scie />} />
             <Route path="/quizHistory" element={<QuizHistory/>} />
-            <Route path="/form" element={<Form/>} />
         </Routes>
       </BrowserRouter>
       </header>
