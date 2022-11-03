@@ -20,8 +20,7 @@ const Form = () => {
               </span>
               { /* Save Score */ }
               <input type="text" className="score-name" placeholder='Enter your Name ...' value={name} onChange={(e)=>{setName(e.target.value)}} />
-              
-              <br/>
+              <br/>z
               <button className="btn" onClick={form} > Submit </button>
           </div>
       </div>
