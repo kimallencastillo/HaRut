@@ -53,7 +53,8 @@ const Form = (props) => {
                           <h3>Name : </h3> <input type="text" name='name' className="input-name" onChange={handleChange} />    
                           <h3>Age : </h3> <input type="number" name='age'
                           className="input-name" onChange={handleChange}/> 
-                          <Link to={`menu/${details.name}/${details.age}`} 
+                          <br/><br/><br/><br/><br/>
+                          <Link to={ `menu/${details.name}/${details.age}` } 
                           className="btn-accept">Submit</Link>   
                       </form>
                 </div>

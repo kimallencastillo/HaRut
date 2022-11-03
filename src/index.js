@@ -76,9 +76,15 @@ const Category = () => {
               <Link to={{
                           pathname: "/math",
                           search: `?name=${ name }&age=${ age }`
-                        }} className="btn-math" >Math</Link>
-              <Link to="/science" className="btn-scie">Science</Link>
-              <Link to="/history" className="btn-his">History</Link>  
+                        }} className="btn-math" > Math </Link>
+              <Link to={{
+                          pathname: "/science",
+                          search: `?name=${ name }&age=${ age }`
+                        }} className="btn-scie"> Science </Link>
+              <Link to={{
+                          pathname: "/history",
+                          search: `?name=${ name }&age=${ age }`
+                        }} className="btn-his"> History </Link>  
           </div>
         </div>
       </nav>
@@ -97,7 +103,7 @@ const MathQuiz = (props) => {
 
   const [newAge, setNewAge] = useState(age)
   const [newName, setName] = useState(name);
-
+  const [mode, setMode] = useState("RECOMMENDED")
   return (
     <nav className="mode">  
       <div className="container_quiz">
@@ -107,7 +113,7 @@ const MathQuiz = (props) => {
             <div className="level-container">
             <Link to={{
               pathname: "/quizMath",
-              search: `?mode=${ "easy" }&name=${ newName }`
+              search: `?mode=${ "easy" }&name=${ newName }&age=${ newAge }`
             }} 
             style={{ background: (newAge <= 8) ? green[900] : red[900]  }}
             className="btn-easy"> Easy </Link> 
@@ -115,33 +121,33 @@ const MathQuiz = (props) => {
             {(newAge <= 8) && <span 
             ><ArrowCircleLeftIcon
             className='level-container-icon' 
-            />RECOMMENDED </span>}
+            />{ mode } </span>}
             </div>
 
             <div className="level-container" >
             <Link to={{
               pathname: "/quizMath",
-              search: `?mode=${ "medium" }&name=${ newName }`
+              search: `?mode=${ "medium" }&name=${ newName }&age=${ newAge }`
             }} 
             style={{ backgroundColor: (newAge >= 9  && newAge <= 12  ) ? green[900] : red[900]  }}
             className="btn-med"> Medium </Link>
             {(newAge >= 9  && newAge <= 12) && <span 
             ><ArrowCircleLeftIcon
             className='level-container-icon' 
-            />RECOMMENDED </span>}
+            /> { mode } </span>}
             </div>
 
             <div className="level-container">
             <Link to={{
               pathname: "/quizMath",
-              search: `?mode=${ "hard" }&name=${ newName }`
+              search: `?mode=${ "hard" }&name=${ newName }&age=${ newAge }`
             }}
             style={{ backgroundColor: (newAge >= 13) ? green[900] : red[900] }}
             className="btn-hard"> Hard </Link>
             {(newAge >= 13) && <span 
             ><ArrowCircleLeftIcon
             className='level-container-icon' 
-            />RECOMMENDED </span>}
+            />{ mode } </span>}
             </div>
 
         </div>
@@ -153,61 +159,129 @@ const MathQuiz = (props) => {
 // Science //
 
 const ScieQuiz = (props) => {
+  const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  });
+  const name = params.name;
+  const age  = params.age;
 
+  const [newAge, setNewAge] = useState(age)
+  const [newName, setName] = useState(name);
+  const [mode, setMode] = useState("RECOMMENDED")
   return (
-    <nav className="mode">
-      <div className="container">
+    <nav className="mode">  
+      <div className="container_quiz">
         <div id="home" className="flex-column flex-center">
           <h1>SCIENCE</h1>
           <h1>Select Difficulty</h1>
-          <Link to={{
-              pathname: "/quizScie",
-              search: `?mode=${"easy"}`
-          }} className="btn-easy"> Easy </Link>
-          <Link to={{
-              pathname: "/quizScie",
-              search: `?mode=${"medium"}`
-          }} className="btn-med"> Medium </Link>
-          <Link to={{
-              pathname: "/quizScie",
-              search: `?mode=${"hard"}`
-          }} className="btn-hard"> Hard </Link>
+            <div className="level-container">
+            <Link to={{
+              pathname: "/quizMath",
+              search: `?mode=${ "easy" }&name=${ newName }&age=${ newAge }`
+            }} 
+            style={{ background: (newAge <= 8) ? green[900] : red[900]  }}
+            className="btn-easy"> Easy </Link> 
+
+            {(newAge <= 8) && <span 
+            ><ArrowCircleLeftIcon
+            className='level-container-icon' 
+            />{ mode } </span>}
+            </div>
+
+            <div className="level-container" >
+            <Link to={{
+              pathname: "/quizMath",
+              search: `?mode=${ "medium" }&name=${ newName }&age=${ newAge }`
+            }} 
+            style={{ backgroundColor: (newAge >= 9  && newAge <= 12  ) ? green[900] : red[900]  }}
+            className="btn-med"> Medium </Link>
+            {(newAge >= 9  && newAge <= 12) && <span 
+            ><ArrowCircleLeftIcon
+            className='level-container-icon' 
+            /> { mode } </span>}
+            </div>
+
+            <div className="level-container">
+            <Link to={{
+              pathname: "/quizMath",
+              search: `?mode=${ "hard" }&name=${ newName }&age=${ newAge }`
+            }}
+            style={{ backgroundColor: (newAge >= 13) ? green[900] : red[900] }}
+            className="btn-hard"> Hard </Link>
+            {(newAge >= 13) && <span 
+            ><ArrowCircleLeftIcon
+            className='level-container-icon' 
+            />{ mode } </span>}
+            </div>
 
         </div>
       </div>
-      
     </nav>
-    )
+  );
 }
 
 // History //
 
 const HistoryQuiz = (props) => {
+  const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  });
+  const name = params.name;
+  const age  = params.age;
 
+  const [newAge, setNewAge] = useState(age)
+  const [newName, setName] = useState(name);
+  const [mode, setMode] = useState("RECOMMENDED")
   return (
-    <nav className="mode">
-       <div className="container">
+    <nav className="mode">  
+      <div className="container_quiz">
         <div id="home" className="flex-column flex-center">
-        <h1>HISTORY</h1>
+          <h1>HISTORY</h1>
           <h1>Select Difficulty</h1>
-          <Link to={{
-              pathname: "/quizHistory",
-              search: `?mode=${"easy"}`
-          }} className="btn-easy"> Easy </Link>
-          <Link to={{
-              pathname: "/quizHistory",
-              search: `?mode=${"medium"}`
-          }} className="btn-med"> Medium </Link>
-          <Link to={{
-              pathname: "/quizHistory",
-              search: `?mode=${"hard"}`
-          }} className="btn-hard"> Hard </Link>
+            <div className="level-container">
+            <Link to={{
+              pathname: "/quizMath",
+              search: `?mode=${ "easy" }&name=${ newName }&age=${ newAge }`
+            }} 
+            style={{ background: (newAge <= 8) ? green[900] : red[900]  }}
+            className="btn-easy"> Easy </Link> 
+
+            {(newAge <= 8) && <span 
+            ><ArrowCircleLeftIcon
+            className='level-container-icon' 
+            />{ mode } </span>}
+            </div>
+
+            <div className="level-container" >
+            <Link to={{
+              pathname: "/quizMath",
+              search: `?mode=${ "medium" }&name=${ newName }&age=${ newAge }`
+            }} 
+            style={{ backgroundColor: (newAge >= 9  && newAge <= 12  ) ? green[900] : red[900]  }}
+            className="btn-med"> Medium </Link>
+            {(newAge >= 9  && newAge <= 12) && <span 
+            ><ArrowCircleLeftIcon
+            className='level-container-icon' 
+            /> { mode } </span>}
+            </div>
+
+            <div className="level-container">
+            <Link to={{
+              pathname: "/quizMath",
+              search: `?mode=${ "hard" }&name=${ newName }&age=${ newAge }`
+            }}
+            style={{ backgroundColor: (newAge >= 13) ? green[900] : red[900] }}
+            className="btn-hard"> Hard </Link>
+            {(newAge >= 13) && <span 
+            ><ArrowCircleLeftIcon
+            className='level-container-icon' 
+            />{ mode } </span>}
+            </div>
 
         </div>
       </div>
-      
     </nav>
-  )
+  );
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
