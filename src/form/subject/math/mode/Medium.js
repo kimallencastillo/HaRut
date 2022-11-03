@@ -5,7 +5,7 @@ export const medQuestions = [
       answerOptions: [
         { symbol: '✌', answerText: '10', isCorrect: false },
         { symbol: '🤟', answerText: '35', isCorrect: false },
-        { symbol: '🤙', answerText: '13', isCorrect: false },
+        { symbol: '✋', answerText: '13', isCorrect: false },
         { symbol: '👍', answerText: '12', isCorrect: true },
       ],
     },
@@ -14,7 +14,7 @@ export const medQuestions = [
       answerOptions: [
         { symbol: '✌', answerText: '446', isCorrect: true },
         { symbol: '🤟', answerText: '426', isCorrect: false },
-        { symbol: '🤙', answerText: '456', isCorrect: false },
+        { symbol: '✋', answerText: '456', isCorrect: false },
         { symbol: '👍', answerText: '335', isCorrect: false },
       ],
     },
@@ -23,7 +23,7 @@ export const medQuestions = [
       answerOptions: [
         { symbol: '✌', answerText: '778', isCorrect: false },
         { symbol: '🤟', answerText: '788', isCorrect: true },
-        { symbol: '🤙', answerText: '768', isCorrect: false },
+        { symbol: '✋', answerText: '768', isCorrect: false },
         { symbol: '👍', answerText: '758', isCorrect: false },
       ],
     },
@@ -32,7 +32,7 @@ export const medQuestions = [
       answerOptions: [
         { symbol: '✌', answerText: '4000', isCorrect: false },
         { symbol: '🤟', answerText: '800', isCorrect: false },
-        { symbol: '🤙', answerText: '400', isCorrect: true },
+        { symbol: '✋', answerText: '400', isCorrect: true },
         { symbol: '👍', answerText: '80', isCorrect: false },
       ],
     },

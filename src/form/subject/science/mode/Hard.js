@@ -5,7 +5,7 @@ export const hardQuestions = [
       answerOptions: [
         { symbol: '✌', answerText: 'Grass', isCorrect: false },
         { symbol: '🤟', answerText: 'Energy', isCorrect: true },
-        { symbol: '🤙', answerText: 'Cows', isCorrect: false },
+        { symbol: '✋', answerText: 'Cows', isCorrect: false },
         { symbol: '👍', answerText: 'Cars', isCorrect: false },
       ],
     },
@@ -14,7 +14,7 @@ export const hardQuestions = [
       answerOptions: [
         { symbol: '✌', answerText: '186 miles per second.', isCorrect: false },
         { symbol: '🤟', answerText: '186,000 miles per second', isCorrect: true },
-        { symbol: '🤙', answerText: '18,600 miles per second.', isCorrect: false },
+        { symbol: '✋', answerText: '18,600 miles per second.', isCorrect: false },
         { symbol: '👍', answerText: '1,860 miles per second.', isCorrect: false },
       ],
     },
@@ -23,7 +23,7 @@ export const hardQuestions = [
       answerOptions: [
         { symbol: '✌', answerText: 'Skin', isCorrect: false },
         { symbol: '🤟', answerText: 'Blood vessels', isCorrect: false },
-        { symbol: '🤙', answerText: 'Fat', isCorrect: false },
+        { symbol: '✋', answerText: 'Fat', isCorrect: false },
         { symbol: '👍', answerText: 'Tendon', isCorrect: true },
       ],
     },
@@ -32,7 +32,7 @@ export const hardQuestions = [
       answerOptions: [
         { symbol: '✌', answerText: 'Venus', isCorrect: true },
         { symbol: '🤟', answerText: 'Mars', isCorrect: false },
-        { symbol: '🤙', answerText: 'Mercury', isCorrect: false },
+        { symbol: '✋', answerText: 'Mercury', isCorrect: false },
         { symbol: '👍', answerText: 'Pluto', isCorrect: false },
       ],
     },

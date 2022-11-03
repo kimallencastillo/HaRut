@@ -6,7 +6,7 @@ export const easyQuestions =  [
     answerOptions: [
       { symbol: '✌', answerText: '20', isCorrect: true },
       { symbol: '🤟', answerText: '35', isCorrect: false },
-      { symbol: '🤙', answerText: '50', isCorrect: false },
+      { symbol: '✋', answerText: '50', isCorrect: false },
       { symbol: '👍', answerText: '27', isCorrect: false },
     ],
   },
@@ -15,7 +15,7 @@ export const easyQuestions =  [
     answerOptions: [
       { symbol: '✌', answerText: '8', isCorrect: false },
       { symbol: '🤟', answerText: '10', isCorrect: false },
-      { symbol: '🤙', answerText: '5', isCorrect: true },
+      { symbol: '✋', answerText: '5', isCorrect: true },
       { symbol: '👍', answerText: '6', isCorrect: false },
     ],
   },
@@ -24,7 +24,7 @@ export const easyQuestions =  [
     answerOptions: [
       { symbol: '✌', answerText: '25', isCorrect: false },
       { symbol: '🤟', answerText: '30', isCorrect: true },
-      { symbol: '🤙', answerText: '35', isCorrect: false },
+      { symbol: '✋', answerText: '35', isCorrect: false },
       { symbol: '👍', answerText: '20', isCorrect: false },
     ],
   },
@@ -33,7 +33,7 @@ export const easyQuestions =  [
     answerOptions: [
       { symbol: '✌', answerText: '29', isCorrect: false },
       { symbol: '🤟', answerText: '20', isCorrect: false },
-      { symbol: '🤙', answerText: '15', isCorrect: false },
+      { symbol: '✋', answerText: '15', isCorrect: false },
       { symbol: '👍', answerText: '23', isCorrect: true },
     ],
   },
@@ -42,7 +42,7 @@ export const easyQuestions =  [
     answerOptions: [
       { symbol: '✌', answerText: '29', isCorrect: false },
       { symbol: '🤟', answerText: '20', isCorrect: true },
-      { symbol: '🤙', answerText: '15', isCorrect: false },
+      { symbol: '✋', answerText: '15', isCorrect: false },
       { symbol: '👍', answerText: '23', isCorrect: false },
     ],
   },

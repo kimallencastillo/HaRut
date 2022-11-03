@@ -5,7 +5,7 @@ export const easyQuestions = [
       answerOptions: [
         { symbol: '✌', answerText: 'Duck', isCorrect: true },
         { symbol: '🤟', answerText: 'Dog', isCorrect: false },
-        { symbol: '🤙', answerText: 'Cat', isCorrect: false },
+        { symbol: '✋', answerText: 'Cat', isCorrect: false },
         { symbol: '👍', answerText: 'Sheep', isCorrect: false },
       ],
     },
@@ -14,7 +14,7 @@ export const easyQuestions = [
       answerOptions: [
         { symbol: '✌', answerText: 'Dog', isCorrect: false },
         { symbol: '🤟', answerText: 'Sheep', isCorrect: false },
-        { symbol: '🤙', answerText: 'Ox', isCorrect: true },
+        { symbol: '✋', answerText: 'Ox', isCorrect: true },
         { symbol: '👍', answerText: 'Monkey', isCorrect: false },
       ],
     },
@@ -23,7 +23,7 @@ export const easyQuestions = [
       answerOptions: [
         { symbol: '✌', answerText: 'Eyes', isCorrect: false },
         { symbol: '🤟', answerText: 'Muscles', isCorrect: true },
-        { symbol: '🤙', answerText: 'Pancreas', isCorrect: false },
+        { symbol: '✋', answerText: 'Pancreas', isCorrect: false },
         { symbol: '👍', answerText: 'Lungs', isCorrect: false },
       ],
     },
@@ -32,7 +32,7 @@ export const easyQuestions = [
       answerOptions: [
         { symbol: '✌', answerText: 'Hair', isCorrect: false },
         { symbol: '🤟', answerText: 'Nails', isCorrect: false },
-        { symbol: '🤙', answerText: 'Eyelids', isCorrect: false },
+        { symbol: '✋', answerText: 'Eyelids', isCorrect: false },
         { symbol: '👍', answerText: 'Nostrils', isCorrect: true },
       ],
     },

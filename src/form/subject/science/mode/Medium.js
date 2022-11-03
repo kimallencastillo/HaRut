@@ -5,7 +5,7 @@ export const medQuestions = [
       answerOptions: [
         { symbol: '✌', answerText: 'Branch', isCorrect: false },
         { symbol: '🤟', answerText: 'Root', isCorrect: false },
-        { symbol: '🤙', answerText: 'Leaf', isCorrect: true },
+        { symbol: '✋', answerText: 'Leaf', isCorrect: true },
         { symbol: '👍', answerText: 'Trunk', isCorrect: false },
       ],
     },
@@ -14,7 +14,7 @@ export const medQuestions = [
       answerOptions: [
         { symbol: '✌', answerText: '25°C', isCorrect: false },
         { symbol: '🤟', answerText: '100°C', isCorrect: true },
-        { symbol: '🤙', answerText: '75°C', isCorrect: false },
+        { symbol: '✋', answerText: '75°C', isCorrect: false },
         { symbol: '👍', answerText: '50°C', isCorrect: false },
       ],
     },
@@ -23,7 +23,7 @@ export const medQuestions = [
       answerOptions: [
         { symbol: '✌', answerText: 'Skin', isCorrect: false },
         { symbol: '🤟', answerText: 'Blood vessels', isCorrect: false },
-        { symbol: '🤙', answerText: 'Fat', isCorrect: false },
+        { symbol: '✋', answerText: 'Fat', isCorrect: false },
         { symbol: '👍', answerText: 'Tendon', isCorrect: true },
       ],
     },
@@ -32,7 +32,7 @@ export const medQuestions = [
       answerOptions: [
         { symbol: '✌', answerText: 'Isaac Newton', isCorrect: true },
         { symbol: '🤟', answerText: 'Thomas Alva Edison', isCorrect: false },
-        { symbol: '🤙', answerText: 'Albert Einstein', isCorrect: false },
+        { symbol: '✋', answerText: 'Albert Einstein', isCorrect: false },
         { symbol: '👍', answerText: 'Stephen Hawking', isCorrect: false },
       ],
     },

@@ -4,7 +4,7 @@ export const hardQuestions = [
         answerOptions: [
           { symbol: '✌', answerText: '6', isCorrect: false },
           { symbol: '🤟', answerText: '16', isCorrect: false },
-          { symbol: '🤙', answerText: '8', isCorrect: false },
+          { symbol: '✋', answerText: '8', isCorrect: false },
           { symbol: '👍', answerText: '5', isCorrect: true },
         ],
       },
@@ -13,7 +13,7 @@ export const hardQuestions = [
         answerOptions: [
           { symbol: '✌', answerText: '150', isCorrect: false },
           { symbol: '🤟', answerText: '100', isCorrect: false },
-          { symbol: '🤙', answerText: '0', isCorrect: true },
+          { symbol: '✋', answerText: '0', isCorrect: true },
           { symbol: '👍', answerText: '50', isCorrect: false },
         ],
       },
@@ -22,7 +22,7 @@ export const hardQuestions = [
         answerOptions: [
           { symbol: '✌', answerText: '6', isCorrect: false },
           { symbol: '🤟', answerText: '8', isCorrect: false },
-          { symbol: '🤙', answerText: '9', isCorrect: false },
+          { symbol: '✋', answerText: '9', isCorrect: false },
           { symbol: '👍', answerText: '7', isCorrect: true },
         ],
       },
@@ -31,7 +31,7 @@ export const hardQuestions = [
         answerOptions: [
           { symbol: '✌', answerText: '65', isCorrect: true },
           { symbol: '🤟', answerText: '60', isCorrect: false },
-          { symbol: '🤙', answerText: '55', isCorrect: false },
+          { symbol: '✋', answerText: '55', isCorrect: false },
           { symbol: '👍', answerText: '50', isCorrect: false },
         ],
       },
@@ -40,7 +40,7 @@ export const hardQuestions = [
         answerOptions: [
           { symbol: '✌', answerText: '8', isCorrect: false },
           { symbol: '🤟', answerText: '6', isCorrect: false },
-          { symbol: '🤙', answerText: '10', isCorrect: true },
+          { symbol: '✋', answerText: '10', isCorrect: true },
           { symbol: '👍', answerText: '9', isCorrect: false },
         ],
       },
