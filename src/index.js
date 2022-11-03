@@ -176,7 +176,7 @@ const ScieQuiz = (props) => {
           <h1>Select Difficulty</h1>
             <div className="level-container">
             <Link to={{
-              pathname: "/quizMath",
+              pathname: "/quizScie",
               search: `?mode=${ "easy" }&name=${ newName }&age=${ newAge }`
             }} 
             style={{ background: (newAge <= 8) ? green[900] : red[900]  }}
@@ -190,7 +190,7 @@ const ScieQuiz = (props) => {
 
             <div className="level-container" >
             <Link to={{
-              pathname: "/quizMath",
+              pathname: "/quizScie",
               search: `?mode=${ "medium" }&name=${ newName }&age=${ newAge }`
             }} 
             style={{ backgroundColor: (newAge >= 9  && newAge <= 12  ) ? green[900] : red[900]  }}
@@ -203,7 +203,7 @@ const ScieQuiz = (props) => {
 
             <div className="level-container">
             <Link to={{
-              pathname: "/quizMath",
+              pathname: "/quizScie",
               search: `?mode=${ "hard" }&name=${ newName }&age=${ newAge }`
             }}
             style={{ backgroundColor: (newAge >= 13) ? green[900] : red[900] }}
@@ -240,7 +240,7 @@ const HistoryQuiz = (props) => {
           <h1>Select Difficulty</h1>
             <div className="level-container">
             <Link to={{
-              pathname: "/quizMath",
+              pathname: "/quizHistory",
               search: `?mode=${ "easy" }&name=${ newName }&age=${ newAge }`
             }} 
             style={{ background: (newAge <= 8) ? green[900] : red[900]  }}
@@ -254,7 +254,7 @@ const HistoryQuiz = (props) => {
 
             <div className="level-container" >
             <Link to={{
-              pathname: "/quizMath",
+              pathname: "/quizHistory",
               search: `?mode=${ "medium" }&name=${ newName }&age=${ newAge }`
             }} 
             style={{ backgroundColor: (newAge >= 9  && newAge <= 12  ) ? green[900] : red[900]  }}
@@ -267,7 +267,7 @@ const HistoryQuiz = (props) => {
 
             <div className="level-container">
             <Link to={{
-              pathname: "/quizMath",
+              pathname: "/quizHistory",
               search: `?mode=${ "hard" }&name=${ newName }&age=${ newAge }`
             }}
             style={{ backgroundColor: (newAge >= 13) ? green[900] : red[900] }}
