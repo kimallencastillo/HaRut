@@ -32,6 +32,7 @@ const QuizMath = () => {
       });
     let mode = params.mode;
     let name = params.name;
+    let age = params.age;
     let questions = []
     var random = []
     if(mode === "easy") {
@@ -199,10 +200,10 @@ const QuizMath = () => {
     }
     function getScore() {
         if(questions[currentQuestion].answerOptions[finalAnswer - 1].isCorrect) {
-        history.push({ pathname: '/score', search: `?score=${ score }` });
+        history.push({ pathname: '/score', search: `?score=${ score }&name=${ name }&age=${ age }` });
         history.go(0);
         } else {
-        history.push({ pathname: '/score', search: `?score=${ score }` });
+        history.push({ pathname: '/score', search: `?score=${ score }&name=${ name }&age=${ age }` });
         history.go(0);  
         }
     }

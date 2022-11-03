@@ -52,6 +52,7 @@ function App() {
             <Route path="/history" element={<HistoryQuiz/>}/>
             <Route path="/quizScie" element={<Quiz_Scie />} />
             <Route path="/quizHistory" element={<QuizHistory/>} />
+            <Route path="/quizEng" element={<EnglishQuiz/>} />
             <Route path="*" element={<p>ERROR NOT FOUND</p>} />
         </Routes>
       </BrowserRouter>
@@ -82,9 +83,9 @@ const Category = () => {
                           search: `?name=${ name }&age=${ age }`
                         }} className="btn-scie"> Science </Link>
               <Link to={{
-                          pathname: "/history",
+                          pathname: "/quizEng",
                           search: `?name=${ name }&age=${ age }`
-                        }} className="btn-his"> History </Link>  
+                        }} className="btn-his"> English </Link>  
           </div>
         </div>
       </nav>
@@ -92,6 +93,70 @@ const Category = () => {
 }
 
 // Subjects //
+
+// English
+// Math //
+const EnglishQuiz = (props) => {
+  const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  });
+  const name = params.name;
+  const age  = params.age;
+
+  const [newAge, setNewAge] = useState(age)
+  const [newName, setName] = useState(name);
+  const [mode, setMode] = useState("RECOMMENDED")
+  return (
+    <nav className="mode">  
+      <div className="container_quiz">
+        <div id="home" className="flex-column flex-center">
+          <h1>English</h1>
+          <h1>Select Difficulty</h1>
+            <div className="level-container">
+            <Link to={{
+              pathname: "/quizEng",
+              search: `?mode=${ "easy" }&name=${ newName }&age=${ newAge }`
+            }} 
+            style={{ background: (newAge <= 8) ? green[900] : red[900]  }}
+            className="btn-easy"> Easy </Link> 
+
+            {(newAge <= 8) && <span 
+            ><ArrowCircleLeftIcon
+            className='level-container-icon' 
+            />{ mode } </span>}
+            </div>
+
+            <div className="level-container" >
+            <Link to={{
+              pathname: "/quizEng",
+              search: `?mode=${ "medium" }&name=${ newName }&age=${ newAge }`
+            }} 
+            style={{ backgroundColor: (newAge >= 9  && newAge <= 12  ) ? green[900] : red[900]  }}
+            className="btn-med"> Medium </Link>
+            {(newAge >= 9  && newAge <= 12) && <span 
+            ><ArrowCircleLeftIcon
+            className='level-container-icon' 
+            /> { mode } </span>}
+            </div>
+
+            <div className="level-container">
+            <Link to={{
+              pathname: "/quizEng",
+              search: `?mode=${ "hard" }&name=${ newName }&age=${ newAge }`
+            }}
+            style={{ backgroundColor: (newAge >= 13) ? green[900] : red[900] }}
+            className="btn-hard"> Hard </Link>
+            {(newAge >= 13) && <span 
+            ><ArrowCircleLeftIcon
+            className='level-container-icon' 
+            />{ mode } </span>}
+            </div>
+
+        </div>
+      </div>
+    </nav>
+  );
+}
 
 // Math //
 const MathQuiz = (props) => {

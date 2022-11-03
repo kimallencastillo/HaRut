@@ -8,9 +8,10 @@ export default function Score() {
         get: (searchParams, prop) => searchParams.get(prop),
       });
     let score = params.score;
-    let name1 = params.name;
+    let userName = params.name;
+    let age = params.age;
     
-    const [name, setName] = useState("");
+    const [name, setName] = useState(userName);
     let SaveScore = false;
     
     /*
@@ -70,11 +71,16 @@ export default function Score() {
                 <h2 >Enter your name below to save your score!</h2>
                 </span>
                 { /* Save Score */ }
-                <input type="text" className="score-name" placeholder='Enter your Name ...' value={name} onChange={(e)=>{setName(e.target.value)}} />
+                <input type="text" className="score-name" style={{
+                    textAlign: 'center'
+                }} placeholder='Enter your Name ...' value={name} onChange={(e)=>{setName(e.target.value)}} />
                 <br/>
                 <button className="btn" onClick={savePlayerScore}> Submit </button>
               
-                <Link to="/category" className="btn">Play Again</Link>
+                <Link to={{
+                          pathname: "/category",
+                          search: `?name=${ name }&age=${ age }`
+                        }} className="btn">Play Again</Link>
                 <a href="/" className="btn">Go Home<i className="fas fa-home"></i></a>  
             
             </div>
