@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import { history } from '../utils/history';
 
+import Form from './StartForm'
 /* Get the score and the player name to localstorage */
-export default function Score() {
+//export default function Score() 
+const Score = ({data}) =>{
     const params = new Proxy(new URLSearchParams(window.location.search), {
         get: (searchParams, prop) => searchParams.get(prop),
       });
     let score = params.score;
     let userName = params.name;
     let age = params.age;
-    
+    const historyParam = useNavigate();
     const [name, setName] = useState(userName);
+    const [isFormVisible, setIsFormVisible] = useState(true);
     let SaveScore = false;
     
     /*
@@ -55,15 +58,25 @@ export default function Score() {
         }
         if(SaveScore) {
             alert("SUBMITTED"); 
-            history.push({ pathname: '/menu' });
-            history.go(0);
+            /*history.push({ pathname: '/menu' });
+            history.go(0);*/
+            //setIsFormVisible(false);
+            historyParam( `/menu/${name}/${age}`, {replace: `${name}/${age}`})
+
         }
     }
     
-   
-   
+   // {isFormVisible ? (
+   /*
+   ) : (
+            <Form />
+            )
+            }
+    */
 
     return (
+        <>
+       
         <div className="container">
             <div id="highScores" className="flex-center flex-column">
                 <h1>{score} </h1>
@@ -85,5 +98,9 @@ export default function Score() {
             
             </div>
         </div>
+         
+        </>
         )
 }
+
+export default Score;

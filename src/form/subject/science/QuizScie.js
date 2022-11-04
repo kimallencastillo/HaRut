@@ -7,7 +7,7 @@ import Webcam from "react-webcam";
 import * as fp from "fingerpose";
 import { Box, Button, LinearProgress, Paper, Switch, Typography, } from '@mui/material';
 import { deepPurple, grey, teal, green, red, blue } from '@mui/material/colors';
-
+//import randomQuestion from "random-question";
 // Import Hand Gesture Assets
 import ThumbsDownGesture from '../../../gestures/ThumbsDown';
 import OKSignGesture from '../../../gestures/OKSign.js';
@@ -23,28 +23,52 @@ import { images } from '../../../utils/images';
 // Import Questions
 import { easyQuestions } from './mode/Easy';
 import { medQuestions } from './mode/Medium';
-import { hardQuestions } from './mode/Hard'
+import { hardQuestions } from './mode/Hard';
+//import { randoQuest } from './mode/randomQuestion';
 
-
-const QuizScie = () => {
+const QuizMath = () => {
     const params = new Proxy(new URLSearchParams(window.location.search), {
         get: (searchParams, prop) => searchParams.get(prop),
       });
     let mode = params.mode;
-    const questions = []
-    
+    let name = params.name;
+    let age = params.age;
+    let questions = []
+    var random = []
     if(mode === "easy") {
-        questions = easyQuestions;
+      questions = easyQuestions;
     } else if(mode === "medium") {
-        questions = medQuestions;
+      questions = medQuestions;
     } else if(mode === "hard") {
-        questions = hardQuestions;
+      questions = hardQuestions;
     }
+    //randomQuestion(questions);
+    /*
+    let ctr = 0;
+    if(ctr > 1 ){
 
-    // random question
-    //const n = questions.length;
-    //questions.sort(() => 0.5 - Math.random()).slice(0, n);
+    }else {
+      ctr++;
+        var n = questions.length;
+        questions.sort(() => 0.5 - Math.random()).slice(0, n);
+       
+    }
     
+    let ctr = 0
+    if(ctr == 0 ) {
+      //var n = questions.length;
+      //questions.sort(() => 0.5 - Math.random()).slice(0, n);
+      ctr++;
+    }else if(ctr > 1) {
+      ctr = 19;
+    }
+    console.log(ctr)
+    */
+    //var n = questions.length;
+    //questions.sort(() => 0.5 - Math.random()).slice(0, n)
+    //questions = Math.floor(Math.random() * random.length);
+
+
     // Webcam , canvas , emoji Declaration
     const [showSkeleton, setShowSkeleton] = useState(true);
     const [emoji, setEmoji] = useState(null);
@@ -52,7 +76,7 @@ const QuizScie = () => {
     const [finalAnswer, setFinalAnswer] = useState(0);
     const webcamRef = useRef(null);
     const canvasRef = useRef(null);
-    
+    const [randomQ, setRandomQ] = useState(false);
     const videoComponentHeight = 300;
     const showSkeletonChange = (e) => {
         setShowSkeleton(e.target.checked);
@@ -128,7 +152,7 @@ const QuizScie = () => {
                     getValue = 1;
                 } else if(getMaxConfidenceValue === 'love_you') {
                     getValue = 2;
-                } else if(getMaxConfidenceValue === 'call_me') {
+                } else if(getMaxConfidenceValue === 'raised_hand') {
                     getValue = 3;
                 } else if(getMaxConfidenceValue === 'thumbs_up') {
                     getValue = 4;
@@ -176,18 +200,19 @@ const QuizScie = () => {
     }
     function getScore() {
         if(questions[currentQuestion].answerOptions[finalAnswer - 1].isCorrect) {
-        history.push({ pathname: '/score', search: `?score=${ score }` });
+        history.push({ pathname: '/score', search: `?score=${ score }&name=${ name }&age=${ age }` });
         history.go(0);
         } else {
-        history.push({ pathname: '/score', search: `?score=${ score }` });
-        history.go(0);
+        history.push({ pathname: '/score', search: `?score=${ score }&name=${ name }&age=${ age }` });
+        history.go(0);  
         }
     }
     // get score incQuestionNum
     function getCurrentQuestion() {
         progressBarFull.style.width = `${((currentQuestion + 1) / questions.length) * 100}%`
         if(currentQuestion < questions.length - 1) {
-            setCurrentQuestion(currentQuestion + 1)
+            setCurrentQuestion(currentQuestion + 1);
+            //setRandomQ(true);
            
         } else {
             getScore();
@@ -208,17 +233,21 @@ const QuizScie = () => {
         setFinalAnswer(0);
         
     }
-    
-    // using Effect
-    useEffect(()=> {
 
-    })
+    //random Quesiton
+    
+    //function randomQuestion(questions) {
+    // return randoQuest(questions);
+    //}
+
+    // using Effect
     useEffect(() => {
         handpose.load().then((result) => {
             runHandpose(result);
+            setRandomQ(false);
         })
     })
-
+    
     useEffect(() => {
         if(selectedGesture !== 0) {
             setShowSelectAns(true);
@@ -445,4 +474,4 @@ const QuizScie = () => {
     )
 }
 
-export default QuizScie;
+export default QuizMath; 

@@ -50,9 +50,9 @@ const Form = (props) => {
                     <h1>WELCOME!!</h1>
                     <>{/*FORM START*/}</>
                       <form onSubmit={handleSubmit}>
-                          <h3>Name : </h3> <input type="text" name='name' className="input-name" onChange={handleChange} />    
+                          <h3>Name : </h3> <input type="text" name='name' className="input-name" onChange={handleChange} placeholder="Name" />    
                           <h3>Age : </h3> <input type="number" name='age'
-                          className="input-name" onChange={handleChange}/> 
+                          className="input-name" onChange={handleChange} placeholder="age"/> 
                           <br/><br/><br/><br/><br/>
                           <Link to={ `menu/${details.name}/${details.age}` } 
                           className="btn-accept">Submit</Link>   
