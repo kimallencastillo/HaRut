@@ -1,6 +1,7 @@
 
 // Import React Assets //
 import React, { useRef, useState, useEffect } from 'react';
+import { useNavigate} from 'react-router-dom';
 import * as tf from "@tensorflow/tfjs";
 import * as handpose from "@tensorflow-models/handpose";
 import Webcam from "react-webcam";
@@ -30,6 +31,7 @@ const QuizMath = () => {
     const params = new Proxy(new URLSearchParams(window.location.search), {
         get: (searchParams, prop) => searchParams.get(prop),
       });
+    const historyParam = useNavigate();
     let mode = params.mode;
     let name = params.name;
     let age = params.age;
@@ -200,11 +202,14 @@ const QuizMath = () => {
     }
     function getScore() {
         if(questions[currentQuestion].answerOptions[finalAnswer - 1].isCorrect) {
-        history.push({ pathname: '/score', search: `?score=${ score }&name=${ name }&age=${ age }` });
-        history.go(0);
+        //history.push({ pathname: '/score', search: `?score=${ score }&name=${ name }&age=${ age }` });
+        //history.go(0);
+        historyParam( `/score?score=${ score }&name=${ name }&age=${ age }`, {replace: `?score=${ score }&name=${ name }&age=${ age }`})
+        
         } else {
-        history.push({ pathname: '/score', search: `?score=${ score }&name=${ name }&age=${ age }` });
-        history.go(0);  
+        historyParam( `/score?score=${ score }&name=${ name }&age=${ age }`, {replace: `?score=${ score }&name=${ name }&age=${ age }`})
+        //history.push({ pathname: '/score', search: `?score=${ score }&name=${ name }&age=${ age }` });
+        //history.go(0);  
         }
     }
     // get score incQuestionNum
