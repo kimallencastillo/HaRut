@@ -5,6 +5,7 @@ import { history } from '../utils/history';
 import './StartForm.css';
 import Menu from './Menu';
 const Form = (props) => {
+  const historyParam = useNavigate();
   const [details, setDetails] = useState({
     name: "",
     age: ""
@@ -34,9 +35,11 @@ const Form = (props) => {
     //console.log("Age: -> ", paramAge)
     //history.push({ pathname: '/menu', search: `?name=${ paramName }&age=${ paramAge }`});
     //history.go(0);
+    historyParam( `/menu/${paramName}/${paramAge}`, {replace: `${paramName}/${paramAge}`})
     } 
   }
-
+  //  <Link to={ `menu/${details.name}/${details.age}` } 
+  //  className="btn-accept">Submit</Link>
     return (
         <div className="appForm">
              
@@ -53,9 +56,9 @@ const Form = (props) => {
                           <h3>Name : </h3> <input type="text" name='name' className="input-name" onChange={handleChange} placeholder="Name" />    
                           <h3>Age : </h3> <input type="number" name='age'
                           className="input-name" onChange={handleChange} placeholder="age"/> 
-                          <br/><br/><br/><br/><br/>
-                          <Link to={ `menu/${details.name}/${details.age}` } 
-                          className="btn-accept">Submit</Link>   
+                  
+                          <button className="btn-accept"> Submit </button>
+                            
                       </form>
                 </div>
               </div>
