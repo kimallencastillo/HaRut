@@ -25,7 +25,7 @@ import { images } from '../../../utils/images';
 import { easyQuestions } from './mode/Easy';
 import { medQuestions } from './mode/Medium';
 import { hardQuestions } from './mode/Hard';
-//import { randoQuest } from './mode/randomQuestion';
+import { randoQuest } from './mode/randomQuestion';
 
 const QuizMath = () => {
     const params = new Proxy(new URLSearchParams(window.location.search), {
@@ -44,7 +44,7 @@ const QuizMath = () => {
     } else if(mode === "hard") {
       questions = hardQuestions;
     }
-    //randomQuestion(questions);
+    randoQuest(questions);
     /*
     let ctr = 0;
     if(ctr > 1 ){

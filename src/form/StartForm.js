@@ -38,7 +38,7 @@ const Form = (props) => {
     historyParam( `/menu/${paramName}/${paramAge}`, {replace: `${paramName}/${paramAge}`})
     } 
   }
-  //  <Link to={ `menu/${details.name}/${details.age}` } 
+  // <Link to={ `menu/${details.name}/${details.age}` } 
   //  className="btn-accept">Submit</Link>
     return (
         <div className="appForm">
