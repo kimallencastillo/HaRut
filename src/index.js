@@ -29,6 +29,7 @@ import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import Quiz_Math from './form/subject/math/Quiz_Math';
 import Quiz_Scie from './form/subject/science/QuizScie';
 import QuizHistory from './form/subject/history/QuizHistory';
+import Quiz_Eng from './form/subject/english/QuizEng';
 // Menu
 function App() {
   const currentPage = window.location.pathname;
@@ -44,7 +45,7 @@ function App() {
             <Route path="/" element={<Form/>} />
             <Route path="/menu/:name/:age" element={<Menu />} />
             <Route path="/category" element={<Category />} />
-            <Route path="/scoreBoard" element={<ScoreBoard/>}/>
+            <Route path="/scoreBoard/:name/:age" element={<ScoreBoard/>}/>
             <Route path="/math" element={<MathQuiz/>}/>
             <Route path="/quizMath" element={<Quiz_Math/>} />
             <Route path="/score" element={<Score/>}/>
@@ -53,6 +54,7 @@ function App() {
             <Route path="/quizScie" element={<Quiz_Scie />} />
             <Route path="/quizHistory" element={<QuizHistory/>} />
             <Route path="/quizEng" element={<EnglishQuiz/>} />
+            <Route path='/quizEnglish' element={<Quiz_Eng/>} />
             <Route path="*" element={<p>ERROR NOT FOUND</p>} />
         </Routes>
       </BrowserRouter>
@@ -114,7 +116,7 @@ const EnglishQuiz = (props) => {
           <h1>Select Difficulty</h1>
             <div className="level-container">
             <Link to={{
-              pathname: "/quizEng",
+              pathname: "/quizEnglish",
               search: `?mode=${ "easy" }&name=${ newName }&age=${ newAge }`
             }} 
             style={{ background: (newAge <= 8) ? green[900] : red[900]  }}
@@ -128,11 +130,11 @@ const EnglishQuiz = (props) => {
 
             <div className="level-container" >
             <Link to={{
-              pathname: "/quizEng",
+              pathname: "/quizEnglish",
               search: `?mode=${ "medium" }&name=${ newName }&age=${ newAge }`
             }} 
             style={{ backgroundColor: (newAge >= 9  && newAge <= 12  ) ? green[900] : red[900]  }}
-            className="btn-med"> Medium </Link>
+            className="btn-med"> Average  </Link>
             {(newAge >= 9  && newAge <= 12) && <span 
             ><ArrowCircleLeftIcon
             className='level-container-icon' 
@@ -141,11 +143,11 @@ const EnglishQuiz = (props) => {
 
             <div className="level-container">
             <Link to={{
-              pathname: "/quizEng",
+              pathname: "/quizEnglish",
               search: `?mode=${ "hard" }&name=${ newName }&age=${ newAge }`
             }}
             style={{ backgroundColor: (newAge >= 13) ? green[900] : red[900] }}
-            className="btn-hard"> Hard </Link>
+            className="btn-hard"> Difficult </Link>
             {(newAge >= 13) && <span 
             ><ArrowCircleLeftIcon
             className='level-container-icon' 
@@ -195,7 +197,7 @@ const MathQuiz = (props) => {
               search: `?mode=${ "medium" }&name=${ newName }&age=${ newAge }`
             }} 
             style={{ backgroundColor: (newAge >= 9  && newAge <= 12  ) ? green[900] : red[900]  }}
-            className="btn-med"> Medium </Link>
+            className="btn-med"> Average  </Link>
             {(newAge >= 9  && newAge <= 12) && <span 
             ><ArrowCircleLeftIcon
             className='level-container-icon' 
@@ -208,7 +210,7 @@ const MathQuiz = (props) => {
               search: `?mode=${ "hard" }&name=${ newName }&age=${ newAge }`
             }}
             style={{ backgroundColor: (newAge >= 13) ? green[900] : red[900] }}
-            className="btn-hard"> Hard </Link>
+            className="btn-hard"> Difficult </Link>
             {(newAge >= 13) && <span 
             ><ArrowCircleLeftIcon
             className='level-container-icon' 
@@ -259,7 +261,7 @@ const ScieQuiz = (props) => {
               search: `?mode=${ "medium" }&name=${ newName }&age=${ newAge }`
             }} 
             style={{ backgroundColor: (newAge >= 9  && newAge <= 12  ) ? green[900] : red[900]  }}
-            className="btn-med"> Medium </Link>
+            className="btn-med"> Average  </Link>
             {(newAge >= 9  && newAge <= 12) && <span 
             ><ArrowCircleLeftIcon
             className='level-container-icon' 
@@ -272,7 +274,7 @@ const ScieQuiz = (props) => {
               search: `?mode=${ "hard" }&name=${ newName }&age=${ newAge }`
             }}
             style={{ backgroundColor: (newAge >= 13) ? green[900] : red[900] }}
-            className="btn-hard"> Hard </Link>
+            className="btn-hard"> Difficult </Link>
             {(newAge >= 13) && <span 
             ><ArrowCircleLeftIcon
             className='level-container-icon' 

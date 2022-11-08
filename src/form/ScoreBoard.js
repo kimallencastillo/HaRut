@@ -2,14 +2,16 @@
 
 import { blue } from "material-ui-colors";
 import { useEffect, useState } from "react";
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
 import './scoreboard.css'
 import { MDBTable, MDBTableHead, MDBTableBody } from 'mdb-react-ui-kit';
 // https://react-bootstrap.github.io/components/table/
-function scoreBoard () {
+const ScoreBoard = ({data}) => {
 
-
-    var scoreBoard = JSON.parse(localStorage.getItem('scores') || "[]");
+    const { name, age} = useParams();   
+    const historyParam = useNavigate();
+     var scoreBoard = JSON.parse(localStorage.getItem('scores') || "[]");
     let scoreBoards = []
 
     let sortStuff = (scoreBoard)  => {
@@ -19,8 +21,13 @@ function scoreBoard () {
             return b.playerScore - a.playerScore;
         });
     }
+    function goHome(){
+        historyParam( `/menu/${name}/${age}`, {replace: `${name}/${age}`})
+
+    }
     console.log("sort :", sortStuff(scoreBoard))
     var rank = 1;
+    //<a href="/" className="btn_1">Go Home<i className="fas fa-home"></i></a>      
     return (
         <div className="app">   
             <h1>SCOREBOARD</h1>                    
@@ -43,9 +50,10 @@ function scoreBoard () {
                 ))} 
                 </tbody>
                 </table>
-                <br/><br/>           
-                <a href="/" className="btn_1">Go Home<i className="fas fa-home"></i></a>            
+                <br/><br/>         
+                <button onClick={goHome} className="btn-accept">Go Home<i className="fas fa-home"></i></button>  
+                      
                 </div>
     )
 }
-export default scoreBoard;
+export default ScoreBoard;
