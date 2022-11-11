@@ -23,7 +23,7 @@ const Menu = ({data}) => {
     */
     const [play, setPlay] = useState(true)
     return (
-     
+        <div className="appForm">
         <nav className="menu">
           <header className="App-header">
             <div className="container">
@@ -50,6 +50,7 @@ const Menu = ({data}) => {
                 </div>
             </header>
         </nav>
+        </div>
     );
 }
 export default Menu;

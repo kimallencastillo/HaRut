@@ -24,10 +24,24 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
 .App-header {
-  
-  background-color: #5F0A87;
+  background-color: #F8C8DC;
+  position:fixed;
+  min-height: 100%;
+  min-width: 100%;
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  }
+  /*
+.App-header {
+  background-color: #F8C8DC;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,7 +49,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+}*/
 .bg-music{
   border-radius: 51px;
 }
