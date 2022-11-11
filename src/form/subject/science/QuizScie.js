@@ -77,7 +77,7 @@ const QuizMath = () => {
     const webcamRef = useRef(null);
     const canvasRef = useRef(null);
     const [randomQ, setRandomQ] = useState(false);
-    const videoComponentHeight = 230;
+    const videoComponentHeight = 190;
     const showSkeletonChange = (e) => {
         setShowSkeleton(e.target.checked);
     };
@@ -374,7 +374,7 @@ const QuizMath = () => {
         </Box>
   
   
-        
+        <>{/* Question Lenght */}</>
         <Box sx={{ mt: 8, display: 'flex', justifyContent: 'space-between' }}>
           <Box sx={{ flexGrow: 1 }}>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>

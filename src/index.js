@@ -24,7 +24,8 @@ import { history } from './utils/history';
 import { Box, Button, LinearProgress, Paper, Switch, Typography, } from '@mui/material';
 import { deepPurple, grey, teal, green, red, blue } from '@mui/material/colors';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
-
+import { Container } from '@mui/system';
+import NavBar from './components/header';
 // Subjects 
 import Quiz_Math from './form/subject/math/Quiz_Math';
 import Quiz_Scie from './form/subject/science/QuizScie';
@@ -40,6 +41,19 @@ function App() {
   return (
     <div className="App">   
       <header className="App-header">
+      <Box
+      sx={{
+        minHeight: '100vh',
+        minWidth: '100vw',
+        background: '#2f3848',
+        color: grey[50],
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
+      >
+      <NavBar />
+      <Container sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
       <BrowserRouter>
         <Routes>
             <Route path="/" element={<Form/>} />
@@ -58,6 +72,8 @@ function App() {
             <Route path="*" element={<p>ERROR NOT FOUND</p>} />
         </Routes>
       </BrowserRouter>
+      </Container>
+      </Box>
       </header>
     </div>
   );
