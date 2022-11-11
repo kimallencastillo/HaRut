@@ -153,9 +153,8 @@ const EnglishQuiz = (props) => {
             className='level-container-icon' 
             />{ mode } </span>}
             </div>
-
+            </div>
         </div>
-      </div>
     </nav>
   );
 }

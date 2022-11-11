@@ -274,6 +274,7 @@ const QuizMath = () => {
     console.log('CurrentQuestions: ' , currentQuestion)
 
     return (
+      <div className='container-subject'>
         <Box
         sx={{
           flexGrow: 1,
@@ -471,6 +472,7 @@ const QuizMath = () => {
           </Box>
         </Box>
       </Box>
+      </div>
     )
 }
 
