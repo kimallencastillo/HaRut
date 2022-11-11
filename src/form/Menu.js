@@ -20,6 +20,7 @@ const Menu = ({data}) => {
         handleSongFinishedPlaying,
         
     ) => {}
+     <h1>Age, { age }</h1>
     */
     const [play, setPlay] = useState(true)
     return (
@@ -39,8 +40,8 @@ const Menu = ({data}) => {
                     loop
                     className='bg-music'
             /><br/>
-                    <h1>HELLO, { name }</h1>
-                    <h1>Age, { age }</h1>
+                    <h1>HELLO, { name }!!</h1>
+                   
                         <Link to={{
                             pathname: "/category",
                             search: `?name=${ name }&age=${ age }`
