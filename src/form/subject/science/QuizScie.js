@@ -274,7 +274,7 @@ const QuizMath = () => {
     console.log('CurrentQuestions: ' , currentQuestion)
 
     return (
-      <header className="App-header">
+      
       <div className='container-subject'>
          <Box
         sx={{
@@ -483,7 +483,7 @@ const QuizMath = () => {
       </Box>
       
       </div>
-      </header>
+    
     )
 }
 
