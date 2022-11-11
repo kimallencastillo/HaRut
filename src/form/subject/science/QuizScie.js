@@ -77,7 +77,7 @@ const QuizMath = () => {
     const webcamRef = useRef(null);
     const canvasRef = useRef(null);
     const [randomQ, setRandomQ] = useState(false);
-    const videoComponentHeight = 300;
+    const videoComponentHeight = 230;
     const showSkeletonChange = (e) => {
         setShowSkeleton(e.target.checked);
     };
