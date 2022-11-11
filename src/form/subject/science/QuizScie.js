@@ -274,215 +274,204 @@ const QuizMath = () => {
     console.log('CurrentQuestions: ' , currentQuestion)
 
     return (
-      
-      <div className='container-subject'>
-         <Box
+   
+      <Box
+      sx={{
+        flexGrow: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+      }}
+    >
+      <Box
         sx={{
-          flexGrow: 1,
           display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-        }}
-      ></Box>
-        <Box
-        sx={{
-          flexGrow: 1,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
+          justifyContent: 'flex-end',
+          alignItems: 'flex-top',
         }}
       >
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'flex-end',
-            alignItems: 'flex-top',
-          }}
-        >
-          <Box>
-            <Box
-              sx={{
-                my: 1,
-                gap: 1,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'flex-end',
-              }}
-            >
-              <Typography>Show skeleton</Typography>
-              <Switch
-                size="small"
-                checked={showSkeleton}
-                onChange={showSkeletonChange}
-              />
-            </Box>
-            <Box
-              sx={{
-                height: `${videoComponentHeight}px`,
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                position: 'relative',
-              }}
-            >
-              <Webcam
-                ref={webcamRef}
-                style={{
-                  height: `${videoComponentHeight}px`,
-                  width: 'auto',
-                  boxShadow: `0 4px 8px -4px rgba(0, 0, 0, 0.75)`,
-                  borderRadius: '10px',
-                  boxSizing: 'border-box',
-                  zIndex: 1,
-                }}
-              />
-              <canvas
-                ref={canvasRef}
-                style={{
-                  height: `${videoComponentHeight}px`,
-                  width: 'auto',
-                  zIndex: 2,
-                  position: 'absolute',
-                  display: showSkeleton ? 'block' : 'none',
-                }}
-              />
-  
-              {emoji && (
-                <Box
-                  sx={{
-                    right: '15px',
-                    bottom: '15px',
-                    background: teal[700],
-                    borderRadius: '10px',
-                    position: 'absolute',
-                    aspectRatio: '1/1',
-                    transition: 'all 0.5s ease',
-                    zIndex: 3,
-                  }}
-                >
-                  <img
-                    src={images[emoji]}
-                    style={{
-                      height: `${videoComponentHeight / 3}px`,
-                      width: 'auto',
-                    }}
-                  />
-                </Box>
-              )}
-            </Box>
-          </Box>
-        </Box>
-  
-  
-        <>{/* Question Lenght */}</>
-        <Box sx={{ mt: 8, display: 'flex', justifyContent: 'space-between' }}>
-          <Box sx={{ flexGrow: 1 }}>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Typography variant="h3" sx={{ color: teal[300] }}>
-                Question {currentQuestion + 1}
-              </Typography>
-              <Typography variant="h5" sx={{ color: grey[300] }}>
-                /{questions.length}
-              </Typography>
-            </Box>
-            <div id="progressBar" variant="determinate" value={((currentQuestion + 1) / questions.length) * 100}>
-                    <div id="progressBarFull"
-                    
-                    >   
-                    </div>
-                </div>
-          </Box>
+        <Box>
           <Box
             sx={{
-              flexGrow: 8,
+              my: 1,
+              gap: 1,
               display: 'flex',
+              alignItems: 'center',
               justifyContent: 'flex-end',
             }}
           >
-            <Box
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-              }}
-            >
-              <Typography variant="h5" sx={{ color: grey[300] }}>
-                Score:
-              </Typography>
-              <Typography variant="h3" sx={{ color: teal[300] }}>
-                {score}
-              </Typography>
-            </Box>
+            <Typography>Show skeleton</Typography>
+            <Switch
+              size="small"
+              checked={showSkeleton}
+              onChange={showSkeletonChange}
+            />
           </Box>
-        </Box>
-        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-          <Box sx={{ mt: 4 }}>
-            
-            {/* Question */}
-       
-              <h2 className='question-text'>{questions[currentQuestion].questionText}</h2> 
-        
-          </Box>
-           {/* End Question */}
-           
-          {/* Questions */}
           <Box
-            sx={{ mt: 4, flexGrow: 1, display: 'flex', flexDirection: 'column' }}
+            sx={{
+              height: `${videoComponentHeight}px`,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              position: 'relative',
+            }}
           >
-            {questions[currentQuestion].answerOptions.map((option, index) => (
-              
-              <Paper
-                className="choice-container"  
-                key={index}
+            <Webcam
+              ref={webcamRef}
+              style={{
+                height: `${videoComponentHeight}px`,
+                width: 'auto',
+                boxShadow: `0 4px 8px -4px rgba(0, 0, 0, 0.75)`,
+                borderRadius: '10px',
+                boxSizing: 'border-box',
+                zIndex: 1,
+              }}
+            />
+            <canvas
+              ref={canvasRef}
+              style={{
+                height: `${videoComponentHeight}px`,
+                width: 'auto',
+                zIndex: 2,
+                position: 'absolute',
+                display: showSkeleton ? 'block' : 'none',
+              }}
+            />
+
+            {emoji && (
+              <Box
                 sx={{
-                  mb: 1,
-                  p: 2,
-                  background: showCorrectAns
-                    ? option.isCorrect
-                      ? green[700]
-                      : red[700]
-                    : showSelectAns
-                    ? selectedGesture - 1 === index
-                      ? blue[700]
-                      : blue[500]
-                    : blue[500],
-                  color: grey[50],
-                  display: 'flex',
-                  alignItems: 'center',
+                  right: '15px',
+                  bottom: '15px',
+                  background: teal[700],
+                  borderRadius: '10px',
+                  position: 'absolute',
+                  aspectRatio: '1/1',
+                  transition: 'all 0.5s ease',
+                  zIndex: 3,
                 }}
               >
-                <Typography
-                  variant="h2"
-                  sx={{ mr: 2, width: '2ch', textAlign: 'center' }}
-                >
-                  {option.symbol}
-                </Typography>
-                <Typography variant="h5">{option.answerText}</Typography>
-              </Paper>
-            ))}
-          </Box>
-          {/*END Questions */}
-          <Box sx={{ mt: 2, display: 'flex', justifyContent: 'flex-end' }}>
-            <Button
-              onClick={() => {
-                getCurrentQuestion();
-              }}
-              size="large"
-              sx={{
-                background: grey[200],
-                color: teal[400],
-                '&:hover': {
-                  background: grey[300],
-                },
-              }}
-            >
-              <Typography variant="h6">Skip question</Typography>
-            </Button>
+                <img
+                  src={images[emoji]}
+                  style={{
+                    height: `${videoComponentHeight / 3}px`,
+                    width: 'auto',
+                  }}
+                />
+              </Box>
+            )}
           </Box>
         </Box>
       </Box>
+
+
       
-      </div>
+      <Box sx={{ mt: 8, display: 'flex', justifyContent: 'space-between' }}>
+        <Box sx={{ flexGrow: 1 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Typography variant="h3" sx={{ color: teal[300] }}>
+              Question {currentQuestion + 1}
+            </Typography>
+            <Typography variant="h5" sx={{ color: grey[300] }}>
+              /{questions.length}
+            </Typography>
+          </Box>
+          <div id="progressBar" variant="determinate" value={((currentQuestion + 1) / questions.length) * 100}>
+                  <div id="progressBarFull"
+                  
+                  >   
+                  </div>
+              </div>
+        </Box>
+        <Box
+          sx={{
+            flexGrow: 8,
+            display: 'flex',
+            justifyContent: 'flex-end',
+          }}
+        >
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
+            <Typography variant="h5" sx={{ color: grey[300] }}>
+              Score:
+            </Typography>
+            <Typography variant="h3" sx={{ color: teal[300] }}>
+              {score}
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
+      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+        <Box sx={{ mt: 4 }}>
+          
+          {/* Question */}
+     
+            <h2 className='question-text'>{questions[currentQuestion].questionText}</h2> 
+      
+        </Box>
+         {/* End Question */}
+         
+        {/* Questions */}
+        <Box
+          sx={{ mt: 4, flexGrow: 1, display: 'flex', flexDirection: 'column' }}
+        >
+          {questions[currentQuestion].answerOptions.map((option, index) => (
+            
+            <Paper
+              className="choice-container"  
+              key={index}
+              sx={{
+                mb: 1,
+                p: 2,
+                background: showCorrectAns
+                  ? option.isCorrect
+                    ? green[700]
+                    : red[700]
+                  : showSelectAns
+                  ? selectedGesture - 1 === index
+                    ? blue[700]
+                    : blue[500]
+                  : blue[500],
+                color: grey[50],
+                display: 'flex',
+                alignItems: 'center',
+              }}
+            >
+              <Typography
+                variant="h2"
+                sx={{ mr: 2, width: '2ch', textAlign: 'center' }}
+              >
+                {option.symbol}
+              </Typography>
+              <Typography variant="h5">{option.answerText}</Typography>
+            </Paper>
+          ))}
+        </Box>
+        {/*END Questions */}
+        <Box sx={{ mt: 2, display: 'flex', justifyContent: 'flex-end' }}>
+          <Button
+            onClick={() => {
+              getCurrentQuestion();
+            }}
+            size="large"
+            sx={{
+              background: grey[200],
+              color: teal[400],
+              '&:hover': {
+                background: grey[300],
+              },
+            }}
+          >
+            <Typography variant="h6">Skip question</Typography>
+          </Button>
+        </Box>
+      </Box>
+    </Box>
     
     )
 }

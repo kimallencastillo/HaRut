@@ -41,17 +41,7 @@ function App() {
   return (
     <div className="App">   
       <header className="App-header">
-      <Box
-      sx={{
-        minHeight: '100vh',
-        minWidth: '100vw',
-        background: '#2f3848',
-        color: grey[50],
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-      }}
-      >
+      
       <NavBar />
       <Container sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
       <BrowserRouter>
@@ -73,7 +63,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       </Container>
-      </Box>
+      
       </header>
     </div>
   );
