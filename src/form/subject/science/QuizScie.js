@@ -275,6 +275,14 @@ const QuizMath = () => {
 
     return (
       <div className='container-subject'>
+         <Box
+        sx={{
+          flexGrow: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+        }}
+      ></Box>
         <Box
         sx={{
           flexGrow: 1,
@@ -472,6 +480,7 @@ const QuizMath = () => {
           </Box>
         </Box>
       </Box>
+      
       </div>
     )
 }
