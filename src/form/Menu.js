@@ -24,8 +24,7 @@ const Menu = ({data}) => {
     */
     const [play, setPlay] = useState(true)
     return (
-        <div className="appForm">
-        <nav className="menu">
+      
           <header className="App-header">
             <div className="container">
                 <div id="home" className="flex-column flex-center">
@@ -33,15 +32,14 @@ const Menu = ({data}) => {
                         width: '600',
                         height: '500'
                     }} alt="logo" />
-                      <ReactAudioPlayer
+                    <h1>HELLO, { name }!!</h1>
+                    <ReactAudioPlayer
                     src={MenuBg}
                     autoPlay
                     controls
                     loop
                     className='bg-music'
-            /><br/>
-                    <h1>HELLO, { name }!!</h1>
-                   
+                    /><br/>
                         <Link to={{
                             pathname: "/category",
                             search: `?name=${ name }&age=${ age }`
@@ -50,8 +48,7 @@ const Menu = ({data}) => {
                     </div>
                 </div>
             </header>
-        </nav>
-        </div>
+      
     );
 }
 export default Menu;

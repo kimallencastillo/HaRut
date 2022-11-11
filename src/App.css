@@ -102,14 +102,14 @@ h2 {
 .container {
   border-radius: 15px;
   background-color: #7E27A4;
-  width: 80vw;
-  height: 90vh;
-  display: flex;
+  width: 70vw;
+  height: 80vh;
+  /*display: flex;*/
   justify-content: center;
   align-items: center;
   max-width: 80rem;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   margin-top: 1vh;
 }
 
