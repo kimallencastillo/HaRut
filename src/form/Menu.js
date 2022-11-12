@@ -1,7 +1,7 @@
 import { Link , useParams} from 'react-router-dom';
 import React, { useRef, useState } from "react";
 import harut from './logo.png';
-import MenuBg from '../music/quizBg1.mp3';
+import MenuBg from '../music/quizBg.mp3';
 import Sound from 'react-sound';
 import ReactAudioPlayer from 'react-audio-player';
 
@@ -39,6 +39,7 @@ const Menu = ({data}) => {
                     controls
                     loop
                     className='bg-music'
+                   
                     /><br/>
                         <Link to={{
                             pathname: "/category",

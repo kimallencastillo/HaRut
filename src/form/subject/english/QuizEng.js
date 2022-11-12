@@ -285,6 +285,7 @@ const Quiz_Eng = () => {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
+          width: '800px'
         }}
       >
         <Box
