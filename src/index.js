@@ -43,7 +43,7 @@ function App() {
       <header className="App-header">
       
       <NavBar />
-      <Container sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
+      <Container sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' , }}>
       <BrowserRouter>
         <Routes>
             <Route path="/" element={<Form/>} />

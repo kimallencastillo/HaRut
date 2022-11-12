@@ -12,6 +12,7 @@ export default function Header() {
         py: 2,
         width: '100%',
         background: '#212936',
+        backgroundColor: "#7E27A4"
       }}
     >
       <Container
@@ -43,7 +44,7 @@ export default function Header() {
             '&> .MuiButton-root': {
               color: grey[50],
               '&:hover': {
-                background: grey[50],
+                background: "#7E27A4",
                 color: teal[400],
               },
             },
@@ -57,17 +58,7 @@ export default function Header() {
           >
             WIP
           </Button>
-          <Button
-            onClick={() => {
-              history.push('/register');
-              history.go(0);
-            }}
-            sx={{
-              textTransform: 'none',
-            }}
-          >
-            WIP
-          </Button>
+        
           <Button
             onClick={() => {
               history.push('/');
