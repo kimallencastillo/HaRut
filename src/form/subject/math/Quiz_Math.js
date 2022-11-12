@@ -286,6 +286,7 @@ const QuizMath = () => {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
+         
         }}
       >
         <Box
