@@ -1,8 +1,9 @@
 import { Box, Button, Typography } from '@mui/material';
 import { grey, teal } from '@mui/material/colors';
 import { Container } from '@mui/system';
-
+import ReactAudioPlayer from 'react-audio-player';
 import { history } from '../utils/history';
+import MenuBg from '../music/quizBg1.mp3';
 import logo from '../img/logo.png';
 
 export default function Header() {
@@ -50,6 +51,13 @@ export default function Header() {
             },
           }}
         >
+          <ReactAudioPlayer 
+              autoPlay
+              src={MenuBg}
+              controls
+              loop
+              className='bg-music'
+          />
           <Button
             onClick={() => {
               history.push('/quiz');

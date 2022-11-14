@@ -33,14 +33,7 @@ const Menu = ({data}) => {
                         height: '500'
                     }} alt="logo" />
                     <h1>HELLO, { name }!!</h1>
-                    <ReactAudioPlayer
-                    src={MenuBg}
-                    autoPlay
-                    controls
-                    loop
-                    className='bg-music'
-                   
-                    /><br/>
+                    
                         <Link to={{
                             pathname: "/category",
                             search: `?name=${ name }&age=${ age }`

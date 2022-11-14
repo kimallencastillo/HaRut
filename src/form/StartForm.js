@@ -41,8 +41,7 @@ const Form = (props) => {
   // <Link to={ `menu/${details.name}/${details.age}` } 
   //  className="btn-accept">Submit</Link>
     return (
-        <div className="appForm">
-             
+          <div className="appForm" >
              <div className="container-form">
              <img src={harut} style={{
                         width: 600,
@@ -62,8 +61,8 @@ const Form = (props) => {
                       </form>
                 </div>
               </div>
-                
-        </div>
+            </div>
+      
     );
 }
 
