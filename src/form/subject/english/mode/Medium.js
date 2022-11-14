@@ -1,39 +1,66 @@
 // Questions List
 export const medQuestions = [
-    {
-      questionText: '2222Whats 5 x 5?',
-      answerOptions: [
-        { symbol: '✌', answerText: '25', isCorrect: true },
-        { symbol: '🤟', answerText: '35', isCorrect: false },
-        { symbol: '🤙', answerText: '50', isCorrect: false },
-        { symbol: '👍', answerText: '20', isCorrect: false },
-      ],
-    },
-    {
-      questionText: 'If you freeze water, what do you get?',
-      answerOptions: [
-        { symbol: '✌', answerText: 'Crystal', isCorrect: false },
-        { symbol: '🤟', answerText: 'Stone', isCorrect: false },
-        { symbol: '🤙', answerText: 'Ice', isCorrect: true },
-        { symbol: '👍', answerText: 'Snow', isCorrect: false },
-      ],
-    },
-    {
-      questionText: 'What is something you hit with a hammer?',
-      answerOptions: [
-        { symbol: '✌', answerText: 'Table', isCorrect: false },
-        { symbol: '🤟', answerText: 'Nail', isCorrect: true },
-        { symbol: '🤙', answerText: 'Screw', isCorrect: false },
-        { symbol: '👍', answerText: 'Stick', isCorrect: false },
-      ],
-    },
-    {
-      questionText: 'How many legs does a spider have??',
-      answerOptions: [
-        { symbol: '✌', answerText: '7', isCorrect: false },
-        { symbol: '🤟', answerText: '5', isCorrect: false },
-        { symbol: '🤙', answerText: '8', isCorrect: false },
-        { symbol: '👍', answerText: '8', isCorrect: true },
-      ],
-    },
+  {
+    questionText: 'She _____ your new teacher',
+    answerOptions: [
+      { symbol: '✌', answerText: 'are', isCorrect: false },
+      { symbol: '🤟', answerText: 'am', isCorrect: false },
+      { symbol: '✋', answerText: 'is', isCorrect: true },
+      { symbol: '👍', answerText: 'be', isCorrect: false },
+    ],
+  },
+  {
+    questionText: 'What is the plural form a knife',
+    answerOptions: [
+      { symbol: '✌', answerText: 'Knives', isCorrect: false },
+      { symbol: '🤟', answerText: 'Knifes', isCorrect: false },
+      { symbol: '✋', answerText: 'Nifes', isCorrect: false },
+      { symbol: '👍', answerText: 'Knives', isCorrect: true },
+    ],
+  },
+  {
+    questionText: 'What is the past tense of place?',
+    answerOptions: [
+      { symbol: '✌', answerText: 'Plased', isCorrect: false },
+      { symbol: '🤟', answerText: 'Placed', isCorrect: true },
+      { symbol: '✋', answerText: 'Plasis', isCorrect: false },
+      { symbol: '👍', answerText: 'Placing', isCorrect: false },
+    ],
+  },
+  {
+    questionText: "_____ the time? It's 9o'clock",
+    answerOptions: [
+      { symbol: '✌', answerText: "What's", isCorrect: true },
+      { symbol: '🤟', answerText: "When's", isCorrect: false },
+      { symbol: '✋', answerText: "Where's", isCorrect: false },
+      { symbol: '👍', answerText: "How's", isCorrect: false },
+    ],
+  },
+  {
+    questionText: "I'm looking at that woman, she (wear) a nice dress.",
+    answerOptions: [
+      { symbol: '✌', answerText: "doesn't wear", isCorrect: false },
+      { symbol: '🤟', answerText: 'wears', isCorrect: false },
+      { symbol: '✋', answerText: 'wear', isCorrect: false },
+      { symbol: '👍', answerText: 'wearing', isCorrect: true },
+    ],
+  },
+  {
+    questionText: 'I _____ my studies by completed',
+    answerOptions: [
+      { symbol: '✌', answerText: 'have completed', isCorrect: false },
+      { symbol: '🤟', answerText: 'had completed', isCorrect: true },
+      { symbol: '✋', answerText: 'was completing', isCorrect: false },
+      { symbol: '👍', answerText: 'completed', isCorrect: false },
+    ],
+  },
+  {
+    questionText: '_____ are ten students in my class.',
+    answerOptions: [
+      { symbol: '✌', answerText: 'There', isCorrect: true },
+      { symbol: '🤟', answerText: 'Their', isCorrect: false },
+      { symbol: '✋', answerText: 'These', isCorrect: false },
+      { symbol: '👍', answerText: 'Them', isCorrect: false },
+    ],
+  },
 ]

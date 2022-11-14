@@ -1,7 +1,6 @@
 
 // Import React Assets //
 import React, { useRef, useState, useEffect } from 'react';
-import { useNavigate} from 'react-router-dom';
 import * as tf from "@tensorflow/tfjs";
 import * as handpose from "@tensorflow-models/handpose";
 import Webcam from "react-webcam";
@@ -31,7 +30,6 @@ const Quiz_Eng = () => {
     const params = new Proxy(new URLSearchParams(window.location.search), {
         get: (searchParams, prop) => searchParams.get(prop),
       });
-    const historyParam = useNavigate();
     let mode = params.mode;
     let name = params.name;
     let age = params.age;
@@ -44,7 +42,7 @@ const Quiz_Eng = () => {
     } else if(mode === "hard") {
       questions = hardQuestions;
     }
-    //randoQuest(questions);
+    //randomQuestion(questions);
     /*
     let ctr = 0;
     if(ctr > 1 ){
@@ -79,7 +77,7 @@ const Quiz_Eng = () => {
     const webcamRef = useRef(null);
     const canvasRef = useRef(null);
     const [randomQ, setRandomQ] = useState(false);
-    const videoComponentHeight = 300;
+    const videoComponentHeight = 190;
     const showSkeletonChange = (e) => {
         setShowSkeleton(e.target.checked);
     };
@@ -202,14 +200,11 @@ const Quiz_Eng = () => {
     }
     function getScore() {
         if(questions[currentQuestion].answerOptions[finalAnswer - 1].isCorrect) {
-        //history.push({ pathname: '/score', search: `?score=${ score }&name=${ name }&age=${ age }` });
-        //history.go(0);
-        historyParam( `/score?score=${ score }&name=${ name }&age=${ age }`, {replace: `?score=${ score }&name=${ name }&age=${ age }`})
-        
+        history.push({ pathname: '/score', search: `?score=${ score }&name=${ name }&age=${ age }` });
+        history.go(0);
         } else {
-        historyParam( `/score?score=${ score }&name=${ name }&age=${ age }`, {replace: `?score=${ score }&name=${ name }&age=${ age }`})
-        //history.push({ pathname: '/score', search: `?score=${ score }&name=${ name }&age=${ age }` });
-        //history.go(0);  
+        history.push({ pathname: '/score', search: `?score=${ score }&name=${ name }&age=${ age }` });
+        history.go(0);  
         }
     }
     // get score incQuestionNum
@@ -279,205 +274,206 @@ const Quiz_Eng = () => {
     console.log('CurrentQuestions: ' , currentQuestion)
 
     return (
-        <Box
+   
+      <Box
+      sx={{
+        flexGrow: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+      }}
+    >
+      <Box
         sx={{
-          flexGrow: 1,
           display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          width: '800px'
+          justifyContent: 'flex-end',
+          alignItems: 'flex-top',
         }}
       >
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'flex-end',
-            alignItems: 'flex-top',
-          }}
-        >
-          <Box>
-            <Box
-              sx={{
-                my: 1,
-                gap: 1,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'flex-end',
-              }}
-            >
-              <Typography>Show skeleton</Typography>
-              <Switch
-                size="small"
-                checked={showSkeleton}
-                onChange={showSkeletonChange}
-              />
-            </Box>
-            <Box
-              sx={{
-                height: `${videoComponentHeight}px`,
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                position: 'relative',
-              }}
-            >
-              <Webcam
-                ref={webcamRef}
-                style={{
-                  height: `${videoComponentHeight}px`,
-                  width: 'auto',
-                  boxShadow: `0 4px 8px -4px rgba(0, 0, 0, 0.75)`,
-                  borderRadius: '10px',
-                  boxSizing: 'border-box',
-                  zIndex: 1,
-                }}
-              />
-              <canvas
-                ref={canvasRef}
-                style={{
-                  height: `${videoComponentHeight}px`,
-                  width: 'auto',
-                  zIndex: 2,
-                  position: 'absolute',
-                  display: showSkeleton ? 'block' : 'none',
-                }}
-              />
-  
-              {emoji && (
-                <Box
-                  sx={{
-                    right: '15px',
-                    bottom: '15px',
-                    background: teal[700],
-                    borderRadius: '10px',
-                    position: 'absolute',
-                    aspectRatio: '1/1',
-                    transition: 'all 0.5s ease',
-                    zIndex: 3,
-                  }}
-                >
-                  <img
-                    src={images[emoji]}
-                    style={{
-                      height: `${videoComponentHeight / 3}px`,
-                      width: 'auto',
-                    }}
-                  />
-                </Box>
-              )}
-            </Box>
-          </Box>
-        </Box>
-  
-  
-        
-        <Box sx={{ mt: 8, display: 'flex', justifyContent: 'space-between' }}>
-          <Box sx={{ flexGrow: 1 }}>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Typography variant="h3" sx={{ color: teal[300] }}>
-                Question {currentQuestion + 1}
-              </Typography>
-              <Typography variant="h5" sx={{ color: grey[300] }}>
-                /{questions.length}
-              </Typography>
-            </Box>
-            <div id="progressBar" variant="determinate" value={((currentQuestion + 1) / questions.length) * 100}>
-                    <div id="progressBarFull"
-                    
-                    >   
-                    </div>
-                </div>
-          </Box>
+        <Box>
           <Box
             sx={{
-              flexGrow: 8,
+              my: 1,
+              gap: 1,
               display: 'flex',
+              alignItems: 'center',
               justifyContent: 'flex-end',
             }}
           >
-            <Box
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-              }}
-            >
-              <Typography variant="h5" sx={{ color: grey[300] }}>
-                Score:
-              </Typography>
-              <Typography variant="h3" sx={{ color: teal[300] }}>
-                {score}
-              </Typography>
-            </Box>
+            <Typography>Show skeleton</Typography>
+            <Switch
+              size="small"
+              checked={showSkeleton}
+              onChange={showSkeletonChange}
+            />
           </Box>
-        </Box>
-        <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-          <Box sx={{ mt: 4 }}>
-            
-            {/* Question */}
-       
-              <h2 className='question-text'>{questions[currentQuestion].questionText}</h2> 
-        
-          </Box>
-           {/* End Question */}
-           
-          {/* Questions */}
           <Box
-            sx={{ mt: 4, flexGrow: 1, display: 'flex', flexDirection: 'column' }}
+            sx={{
+              height: `${videoComponentHeight}px`,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              position: 'relative',
+            }}
           >
-            {questions[currentQuestion].answerOptions.map((option, index) => (
-              
-              <Paper
-                className="choice-container"  
-                key={index}
+            <Webcam
+              ref={webcamRef}
+              style={{
+                height: `${videoComponentHeight}px`,
+                width: 'auto',
+                boxShadow: `0 4px 8px -4px rgba(0, 0, 0, 0.75)`,
+                borderRadius: '10px',
+                boxSizing: 'border-box',
+                zIndex: 1,
+              }}
+            />
+            <canvas
+              ref={canvasRef}
+              style={{
+                height: `${videoComponentHeight}px`,
+                width: 'auto',
+                zIndex: 2,
+                position: 'absolute',
+                display: showSkeleton ? 'block' : 'none',
+              }}
+            />
+
+            {emoji && (
+              <Box
                 sx={{
-                  mb: 1,
-                  p: 2,
-                  background: showCorrectAns
-                    ? option.isCorrect
-                      ? green[700]
-                      : red[700]
-                    : showSelectAns
-                    ? selectedGesture - 1 === index
-                      ? blue[700]
-                      : blue[500]
-                    : blue[500],
-                  color: grey[50],
-                  display: 'flex',
-                  alignItems: 'center',
+                  right: '15px',
+                  bottom: '15px',
+                  background: teal[700],
+                  borderRadius: '10px',
+                  position: 'absolute',
+                  aspectRatio: '1/1',
+                  transition: 'all 0.5s ease',
+                  zIndex: 3,
                 }}
               >
-                <Typography
-                  variant="h2"
-                  sx={{ mr: 2, width: '2ch', textAlign: 'center' }}
-                >
-                  {option.symbol}
-                </Typography>
-                <Typography variant="h5">{option.answerText}</Typography>
-              </Paper>
-            ))}
-          </Box>
-          {/*END Questions */}
-          <Box sx={{ mt: 2, display: 'flex', justifyContent: 'flex-end' }}>
-            <Button
-              onClick={() => {
-                getCurrentQuestion();
-              }}
-              size="large"
-              sx={{
-                background: grey[200],
-                color: teal[400],
-                '&:hover': {
-                  background: grey[300],
-                },
-              }}
-            >
-              <Typography variant="h6">Skip question</Typography>
-            </Button>
+                <img
+                  src={images[emoji]}
+                  style={{
+                    height: `${videoComponentHeight / 3}px`,
+                    width: 'auto',
+                  }}
+                />
+              </Box>
+            )}
           </Box>
         </Box>
       </Box>
+
+
+      
+      <Box sx={{ mt: 8, display: 'flex', justifyContent: 'space-between' }}>
+        <Box sx={{ flexGrow: 1 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Typography variant="h3" sx={{ color: teal[300] }}>
+              Question {currentQuestion + 1}
+            </Typography>
+            <Typography variant="h5" sx={{ color: grey[300] }}>
+              /{questions.length}
+            </Typography>
+          </Box>
+          <div id="progressBar" variant="determinate" value={((currentQuestion + 1) / questions.length) * 100}>
+                  <div id="progressBarFull"
+                  
+                  >   
+                  </div>
+              </div>
+        </Box>
+        <Box
+          sx={{
+            flexGrow: 8,
+            display: 'flex',
+            justifyContent: 'flex-end',
+          }}
+        >
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
+            <Typography variant="h5" sx={{ color: grey[300] }}>
+              Score:
+            </Typography>
+            <Typography variant="h3" sx={{ color: teal[300] }}>
+              {score}
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
+      <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+        <Box sx={{ mt: 4 }}>
+          
+          {/* Question */}
+     
+            <h2 className='question-text'>{questions[currentQuestion].questionText}</h2> 
+      
+        </Box>
+         {/* End Question */}
+         
+        {/* Questions */}
+        <Box
+          sx={{ mt: 4, flexGrow: 1, display: 'flex', flexDirection: 'column' }}
+        >
+          {questions[currentQuestion].answerOptions.map((option, index) => (
+            
+            <Paper
+              className="choice-container"  
+              key={index}
+              sx={{
+                mb: 1,
+                p: 2,
+                background: showCorrectAns
+                  ? option.isCorrect
+                    ? green[700]
+                    : red[700]
+                  : showSelectAns
+                  ? selectedGesture - 1 === index
+                    ? blue[700]
+                    : blue[500]
+                  : blue[500],
+                color: grey[50],
+                display: 'flex',
+                alignItems: 'center',
+              }}
+            >
+              <Typography
+                variant="h2"
+                sx={{ mr: 2, width: '2ch', textAlign: 'center' }}
+              >
+                {option.symbol}
+              </Typography>
+              <Typography variant="h5">{option.answerText}</Typography>
+            </Paper>
+          ))}
+        </Box>
+        {/*END Questions */}
+        <Box sx={{ mt: 2, display: 'flex', justifyContent: 'flex-end' }}>
+          <Button
+            onClick={() => {
+              getCurrentQuestion();
+            }}
+            size="large"
+            sx={{
+              background: grey[200],
+              color: teal[400],
+              '&:hover': {
+                background: grey[300],
+              },
+            }}
+          >
+            <Typography variant="h6">Skip question</Typography>
+          </Button>
+        </Box>
+      </Box>
+    </Box>
+    
     )
 }
 
-export default Quiz_Eng;
+export default Quiz_Eng; 
