@@ -288,6 +288,7 @@ const QuizMath = () => {
           display: 'flex',
           justifyContent: 'flex-end',
           alignItems: 'flex-top',
+          
         }}
       >
         <Box>
@@ -469,8 +470,13 @@ const QuizMath = () => {
           >
             <Typography variant="h6">Skip question</Typography>
           </Button>
+          
         </Box>
       </Box>
+      <div style={{ 
+        marginBottom: "550px"
+      }}>
+      </div>
     </Box>
     
     )
