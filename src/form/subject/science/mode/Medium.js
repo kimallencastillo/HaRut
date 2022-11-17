@@ -1,39 +1,66 @@
 // Questions List
 export const medQuestions = [
     {
-      questionText: 'What part of the plant conducts photosynthesis?',
+      questionText: 'Which of these is not a planet?',
       answerOptions: [
-        { symbol: '✌', answerText: 'Branch', isCorrect: false },
-        { symbol: '🤟', answerText: 'Root', isCorrect: false },
-        { symbol: '✋', answerText: 'Leaf', isCorrect: true },
-        { symbol: '👍', answerText: 'Trunk', isCorrect: false },
+        { symbol: '✌', answerText: 'Mercury', isCorrect: false },
+        { symbol: '🤟', answerText: 'Jupiter', isCorrect: false },
+        { symbol: '✋', answerText: 'Pluto', isCorrect: true },
+        { symbol: '👍', answerText: 'Venus', isCorrect: false },
       ],
     },
     {
-      questionText: 'What is the boiling point of water?',
+      questionText: 'What part of the flower contains the pollen?',
       answerOptions: [
-        { symbol: '✌', answerText: '25°C', isCorrect: false },
-        { symbol: '🤟', answerText: '100°C', isCorrect: true },
-        { symbol: '✋', answerText: '75°C', isCorrect: false },
-        { symbol: '👍', answerText: '50°C', isCorrect: false },
+        { symbol: '✌', answerText: 'Leaves', isCorrect: false },
+        { symbol: '🤟', answerText: 'Anther', isCorrect: true },
+        { symbol: '✋', answerText: 'Stem', isCorrect: false },
+        { symbol: '👍', answerText: 'Roots', isCorrect: false },
       ],
     },
     {
-      questionText: 'What tissue connects muscles to bones?',
+      questionText: 'Which part of the bird lets it fly high in the sky?',
       answerOptions: [
-        { symbol: '✌', answerText: 'Skin', isCorrect: false },
-        { symbol: '🤟', answerText: 'Blood vessels', isCorrect: false },
-        { symbol: '✋', answerText: 'Fat', isCorrect: false },
-        { symbol: '👍', answerText: 'Tendon', isCorrect: true },
+        { symbol: '✌', answerText: 'Claws', isCorrect: false },
+        { symbol: '🤟', answerText: 'Feet', isCorrect: false },
+        { symbol: '✋', answerText: 'Beak', isCorrect: false },
+        { symbol: '👍', answerText: 'Wings', isCorrect: true },
       ],
     },
     {
-      questionText: 'Which scientist proposed the three laws of motion?',
+      questionText: 'When you push something, you apply ____.',
       answerOptions: [
-        { symbol: '✌', answerText: 'Isaac Newton', isCorrect: true },
-        { symbol: '🤟', answerText: 'Thomas Alva Edison', isCorrect: false },
-        { symbol: '✋', answerText: 'Albert Einstein', isCorrect: false },
-        { symbol: '👍', answerText: 'Stephen Hawking', isCorrect: false },
+        { symbol: '✌', answerText: 'Force', isCorrect: true },
+        { symbol: '🤟', answerText: 'Mass', isCorrect: false },
+        { symbol: '✋', answerText: 'Compression', isCorrect: false },
+        { symbol: '👍', answerText: 'Acceleration', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Plants are also called:',
+      answerOptions: [
+        { symbol: '✌', answerText: 'Herbivores ', isCorrect: false },
+        { symbol: '🤟', answerText: 'Consumer', isCorrect: false },
+        { symbol: '✋', answerText: 'Producers', isCorrect: true },
+        { symbol: '👍', answerText: 'Carnivores', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'Plants need which gas to perform photosynthesis?',
+      answerOptions: [
+        { symbol: '✌', answerText: 'Hydrogen', isCorrect: false },
+        { symbol: '🤟', answerText: 'Carbon dioxide', isCorrect: true },
+        { symbol: '✋', answerText: 'Oxygen', isCorrect: false },
+        { symbol: '👍', answerText: 'Carbon Monoxide', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'What is the source of energy for producers?',
+      answerOptions: [
+        { symbol: '✌', answerText: 'Water', isCorrect: false },
+        { symbol: '🤟', answerText: 'The wind ', isCorrect: false },
+        { symbol: '✋', answerText: 'The earth', isCorrect: false },
+        { symbol: '👍', answerText: 'The sun', isCorrect: true },
       ],
     },
 ]

@@ -1,5 +1,79 @@
 // Questions List
 export const hardQuestions = [
+  {
+    questionText: 'Which part of the cell passes on information to new cells?',
+    answerOptions: [
+      { symbol: '✌', answerText: 'Vacuole', isCorrect: false },
+      { symbol: '🤟', answerText: 'Nucleus', isCorrect: true },
+      { symbol: '✋', answerText: 'Cytoplasm', isCorrect: false },
+      { symbol: '👍', answerText: 'Cell wall', isCorrect: false },
+    ],
+  },
+  {
+    questionText: 'Animal that only eats plant as food',
+    answerOptions: [
+      { symbol: '✌', answerText: 'Producer', isCorrect: false },
+      { symbol: '🤟', answerText: 'Decomposer', isCorrect: false },
+      { symbol: '✋', answerText: 'Primary consumer', isCorrect: true },
+      { symbol: '👍', answerText: 'Secondary consumer', isCorrect: false },
+    ],
+  },
+  {
+    questionText: 'Which organ is used in photosynthesis?',
+    answerOptions: [
+      { symbol: '✌', answerText: 'Leaf', isCorrect: true },
+      { symbol: '🤟', answerText: 'Flower', isCorrect: false },
+      { symbol: '✋', answerText: 'Root Hair', isCorrect: false },
+      { symbol: '👍', answerText: 'Root Tipe', isCorrect: false },
+    ],
+  },
+  {
+    questionText: 'Which organ is used in pollination?',
+    answerOptions: [
+      { symbol: '✌', answerText: 'Leaf', isCorrect: false },
+      { symbol: '🤟', answerText: 'Flower', isCorrect: true },
+      { symbol: '✋', answerText: 'Root', isCorrect: false },
+      { symbol: '👍', answerText: 'Stem', isCorrect: false },
+    ],
+  },
+  {
+    questionText: 'Which type of soil will have good drainage, meaning water runs through quickly?',
+    answerOptions: [
+      { symbol: '✌', answerText: 'Sandy', isCorrect: true },
+      { symbol: '🤟', answerText: 'Clay', isCorrect: false },
+      { symbol: '✋', answerText: 'Loam', isCorrect: false },
+      { symbol: '👍', answerText: 'Silt', isCorrect: false },
+    ],
+  },
+  {
+    questionText: 'Which part of the cell passes on information to new cells?',
+    answerOptions: [
+      { symbol: '✌', answerText: 'Vacuole', isCorrect: false },
+      { symbol: '🤟', answerText: 'Cytoplasm', isCorrect: false },
+      { symbol: '✋', answerText: 'Cell wall', isCorrect: false },
+      { symbol: '👍', answerText: 'Nucleus', isCorrect: true },
+    ],
+  },
+  {
+    questionText: 'Trees give out which gas?',
+    answerOptions: [
+      { symbol: '✌', answerText: 'Nitrogen', isCorrect: false },
+      { symbol: '🤟', answerText: 'Oxygen', isCorrect: true },
+      { symbol: '✋', answerText: 'Carbon dioxide', isCorrect: false },
+      { symbol: '👍', answerText: 'Methane', isCorrect: false },
+    ],
+  },
+  {
+    questionText: 'Which nutrient plays an essential role in muscle-building?',
+    answerOptions: [
+      { symbol: '✌', answerText: 'Protein', isCorrect: true },
+      { symbol: '🤟', answerText: 'Carbohydrate', isCorrect: false },
+      { symbol: '✋', answerText: 'Fat', isCorrect: false },
+      { symbol: '👍', answerText: 'Iron', isCorrect: false },
+    ],
+  },
+
+
     {
       questionText: 'Recycling paper not only saves trees, it saves ______.',
       answerOptions: [
@@ -10,12 +84,12 @@ export const hardQuestions = [
       ],
     },
     {
-      questionText: 'How fast is the speed of light?',
+      questionText: 'Which is the strongest sense in a dog?',
       answerOptions: [
-        { symbol: '✌', answerText: '186 miles per second.', isCorrect: false },
-        { symbol: '🤟', answerText: '186,000 miles per second', isCorrect: true },
-        { symbol: '✋', answerText: '18,600 miles per second.', isCorrect: false },
-        { symbol: '👍', answerText: '1,860 miles per second.', isCorrect: false },
+        { symbol: '✌', answerText: 'Hearing', isCorrect: false },
+        { symbol: '🤟', answerText: 'Touch', isCorrect: false },
+        { symbol: '✋', answerText: 'Smell', isCorrect: true },
+        { symbol: '👍', answerText: 'Taste', isCorrect: false },
       ],
     },
     {

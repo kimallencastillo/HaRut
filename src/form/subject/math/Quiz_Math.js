@@ -477,6 +477,10 @@ const QuizMath = () => {
             </Button>
           </Box>
         </Box>
+        <div style={{ 
+        marginBottom: "550px"
+      }}>
+      </div>
       </Box>
       
     )

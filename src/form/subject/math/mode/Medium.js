@@ -10,30 +10,57 @@ export const medQuestions = [
       ],
     },
     {
-      questionText: 'What is the sum of 130+125+191?',
+      questionText: '3hrs 40 mins equal ____.',
       answerOptions: [
-        { symbol: '✌', answerText: '446', isCorrect: true },
-        { symbol: '🤟', answerText: '426', isCorrect: false },
-        { symbol: '✋', answerText: '456', isCorrect: false },
-        { symbol: '👍', answerText: '335', isCorrect: false },
+        { symbol: '✌', answerText: '220mins', isCorrect: true },
+        { symbol: '🤟', answerText: '180mins', isCorrect: false },
+        { symbol: '✋', answerText: '120mins', isCorrect: false },
+        { symbol: '👍', answerText: '240mins', isCorrect: false },
       ],
     },
     {
-      questionText: ' If we minus 712 from 1500, how much do we get?',
+      questionText: 'How many 40 minutes are there in 8 hours?',
       answerOptions: [
-        { symbol: '✌', answerText: '778', isCorrect: false },
-        { symbol: '🤟', answerText: '788', isCorrect: true },
-        { symbol: '✋', answerText: '768', isCorrect: false },
-        { symbol: '👍', answerText: '758', isCorrect: false },
+        { symbol: '✌', answerText: '13', isCorrect: false },
+        { symbol: '🤟', answerText: '22', isCorrect: false },
+        { symbol: '✋', answerText: '15', isCorrect: false },
+        { symbol: '👍', answerText: '12', isCorrect: true },
       ],
     },
     {
-      questionText: '50 times of 8 is equal to: ?',
+      questionText: 'A bar of chocolate costs PhP 7 each. How many can you buy for PhP 100?',
       answerOptions: [
-        { symbol: '✌', answerText: '4000', isCorrect: false },
-        { symbol: '🤟', answerText: '800', isCorrect: false },
-        { symbol: '✋', answerText: '400', isCorrect: true },
-        { symbol: '👍', answerText: '80', isCorrect: false },
+        { symbol: '✌', answerText: '22', isCorrect: false },
+        { symbol: '🤟', answerText: '17', isCorrect: false },
+        { symbol: '✋', answerText: '14', isCorrect: true },
+        { symbol: '👍', answerText: '15', isCorrect: false },
+      ],
+    },
+    {
+      questionText: "What's 8 x 2?",
+      answerOptions: [
+        { symbol: '✌', answerText: '12 ', isCorrect: false },
+        { symbol: '🤟', answerText: '16', isCorrect: true },
+        { symbol: '✋', answerText: '14', isCorrect: false },
+        { symbol: '👍', answerText: '18', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'The smallest single-digit composite number is ____.',
+      answerOptions: [
+        { symbol: '✌', answerText: '4', isCorrect: true },
+        { symbol: '🤟', answerText: '8', isCorrect: false },
+        { symbol: '✋', answerText: '2', isCorrect: false },
+        { symbol: '👍', answerText: '5', isCorrect: false },
+      ],
+    },
+    {
+      questionText: 'A number is multiplied by 8 and divided by 4. The result is 12. What is the number?',
+      answerOptions: [
+        { symbol: '✌', answerText: '5', isCorrect: false },
+        { symbol: '🤟', answerText: '7', isCorrect: false },
+        { symbol: '✋', answerText: '6 ', isCorrect: true },
+        { symbol: '👍', answerText: '4', isCorrect: false },
       ],
     },
 ]

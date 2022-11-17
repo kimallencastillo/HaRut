@@ -77,6 +77,11 @@ const Category = () => {
   });
   const name = params.name;
   const age  = params.age;
+  const historyParam = useNavigate();
+  function goHome(){
+    historyParam( `/menu/${name}/${age}`, {replace: `${name}/${age}`})
+
+  }
     return (
       <nav className="catg">
         <div className="container">
@@ -94,6 +99,12 @@ const Category = () => {
                           pathname: "/quizEng",
                           search: `?name=${ name }&age=${ age }`
                         }} className="btn-his"> English </Link>  
+
+                        
+                <button onClick={goHome} className="btn-accept"
+                style={{
+                  marginTop: "55px"
+                }}>Back<i className="fas fa-home"></i></button>  
           </div>
         </div>
       </nav>
@@ -159,6 +170,13 @@ const EnglishQuiz = (props) => {
             className='level-container-icon' 
             />{ mode } </span>}
             </div>
+            <Link to={{
+                          pathname: "/category",
+                          search: `?name=${ name }&age=${ age }`
+                        }} className="btn-accept"
+                style={{
+                  marginTop: "55px"
+                }}>Back<i className="fas fa-home"></i></Link>  
             </div>
         </div>
     </nav>
@@ -221,7 +239,14 @@ const MathQuiz = (props) => {
             className='level-container-icon' 
             />{ mode } </span>}
             </div>
-
+            <Link to={{
+                          pathname: "/category",
+                          search: `?name=${ name }&age=${ age }`
+                        }} className="btn-accept"
+                style={{
+                  marginTop: "55px"
+                }}>Back<i className="fas fa-home"></i></Link>  
+            
         </div>
       </div>
     </nav>
@@ -285,7 +310,14 @@ const ScieQuiz = (props) => {
             className='level-container-icon' 
             />{ mode } </span>}
             </div>
-
+            <Link to={{
+                          pathname: "/category",
+                          search: `?name=${ name }&age=${ age }`
+                        }} className="btn-accept"
+                style={{
+                  marginTop: "55px"
+                }}>Back<i className="fas fa-home"></i></Link>  
+            
         </div>
       </div>
     </nav>

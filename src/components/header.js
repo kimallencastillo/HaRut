@@ -28,8 +28,8 @@ export default function Header() {
             src={logo}
             alt="Harut"
             style={{
-              minHeight: '24px',
-              maxHeight: '36px',
+              minHeight: '78px',
+              maxHeight: '56px',
               height: '100%',
               width: 'auto',
             }}
@@ -63,6 +63,9 @@ export default function Header() {
               history.push('/quiz');
               history.go(0);
             }}
+            style={{
+              fontSize: "15px"
+            }}
           >
             WIP
           </Button>
@@ -75,8 +78,11 @@ export default function Header() {
             sx={{
               textTransform: 'none',
             }}
+            style={{
+              fontSize: "15px"
+            }}
           >
-            Login
+            About
           </Button>
         </Box>
       </Container>
