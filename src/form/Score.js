@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate} from 'react-router-dom';
-import { history } from '../utils/history';
+//import { history } from '../utils/history';
 
-import Form from './StartForm'
+//import Form from './StartForm'
 /* Get the score and the player name to localstorage */
 //export default function Score() 
 const Score = ({data}) =>{
@@ -14,7 +14,7 @@ const Score = ({data}) =>{
     let age = params.age;
     const historyParam = useNavigate();
     const [name, setName] = useState(userName);
-    const [isFormVisible, setIsFormVisible] = useState(true);
+    //const [isFormVisible, setIsFormVisible] = useState(true);
     let SaveScore = false;
     
     /*
@@ -65,7 +65,6 @@ const Score = ({data}) =>{
 
         }
     }
-    
    // {isFormVisible ? (
    /*
    ) : (
@@ -73,10 +72,9 @@ const Score = ({data}) =>{
             )
             }
     */
-
     return (
         <>
-       
+        <div style={{marginTop: "100px"}}></div>
         <div className="container">
             <div id="highScores" className="flex-center flex-column">
                 <h1>{score} </h1>

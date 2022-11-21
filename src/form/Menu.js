@@ -1,10 +1,11 @@
 import { Link , useParams} from 'react-router-dom';
 import React, { useRef, useState } from "react";
 import harut from './logo.png';
+/*
 import MenuBg from '../music/quizBg.mp3';
 import Sound from 'react-sound';
 import ReactAudioPlayer from 'react-audio-player';
-
+*/
 const Menu = ({data}) => {
     // const params = new Proxy(new URLSearchParams(window.location.search), {
     //     get: (searchParams, prop) => searchParams.get(prop),
