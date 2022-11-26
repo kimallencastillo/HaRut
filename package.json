@@ -27,6 +27,7 @@
     "react-audio-player": "^0.17.0",
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
+    "react-h5-audio-player": "^3.8.6",
     "react-native-background-audio": "^1.1.4",
     "react-native-leaderboard": "^1.0.6",
     "react-router-dom": "^6.3.0",

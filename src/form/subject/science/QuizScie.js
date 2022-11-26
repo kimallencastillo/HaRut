@@ -378,11 +378,8 @@ const QuizMath = () => {
             </Typography>
           </Box>
           <div id="progressBar" variant="determinate" value={((currentQuestion + 1) / questions.length) * 100}>
-                  <div id="progressBarFull"
-                  
-                  >   
-                  </div>
-              </div>
+                  <div id="progressBarFull"></div>
+          </div>
         </Box>
         <Box
           sx={{

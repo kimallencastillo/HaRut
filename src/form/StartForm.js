@@ -10,6 +10,7 @@ const Form = (props) => {
     name: "",
     age: ""
   })
+  let accountStatus = false;
 
   //const [isFormVisible, setIsFormVisible] = useState(true);
   const handleChange = (e) => {
@@ -28,13 +29,20 @@ const Form = (props) => {
     const paramName = details.name;
     const paramAge = details.age;
 
-    if( paramName === "" || paramAge === "") {
-      alert("NO INPUT")
-    }else {
+    if( paramName === "" ) {
+      alert("NO NAME INPUT!!")
+    }else if ( paramAge === ""){
+      alert("NO AGE INPUT!!")
+    }
+    else {
     //console.log("Name: -> ", paramName)
     //console.log("Age: -> ", paramAge)
     //history.push({ pathname: '/menu', search: `?name=${ paramName }&age=${ paramAge }`});
     //history.go(0);
+    accountStatus = true;
+    localStorage.setItem('account', JSON.stringify(accountStatus));
+    localStorage.setItem('name', JSON.stringify(paramName));
+    localStorage.setItem('age', JSON.stringify(paramAge));
     historyParam( `/menu/${paramName}/${paramAge}`, {replace: `${paramName}/${paramAge}`})
     } 
   }

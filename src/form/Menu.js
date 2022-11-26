@@ -39,6 +39,7 @@ const Menu = ({data}) => {
                             pathname: "/category",
                             search: `?name=${ name }&age=${ age }`
                         }} className="btn">Play</Link>
+                         <Link to= {`/testGesture/${name}/${age}`} id="test-btn" className="btn">Test Gestures</Link> 
                         <Link to= {`/scoreBoard/${name}/${age}`} id="highscore-btn" className="btn">High Scores<i className="fas fa-crown"></i></Link> 
                         <br/><br/>    
                     </div>

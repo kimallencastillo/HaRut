@@ -74,7 +74,7 @@ const Score = ({data}) =>{
     */
     return (
         <>
-        <div style={{marginTop: "100px"}}></div>
+        <div style={{marginTop: "50px"}}></div>
         <div className="container">
             <div id="highScores" className="flex-center flex-column">
                 <h1>{score} </h1>

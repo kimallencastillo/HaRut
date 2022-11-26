@@ -15,6 +15,7 @@ import Form from './form/StartForm';
 import Quiz from './form/Quiz'
 import Score from './form/Score'
 import ScoreBoard from './form/ScoreBoard'
+import TestGesture from './Play/testGesture'
 // CSS
 import './App.css';
 import React, { useRef, useState } from "react";
@@ -59,6 +60,7 @@ function App() {
             <Route path="/quizHistory" element={<QuizHistory/>} />
             <Route path="/quizEng" element={<EnglishQuiz/>} />
             <Route path='/quizEnglish' element={<Quiz_Eng/>} />
+            <Route path='/testGesture/:name/:age' element={<TestGesture/>} />
             <Route path="*" element={<p>ERROR NOT FOUND</p>} />
         </Routes>
       </BrowserRouter>

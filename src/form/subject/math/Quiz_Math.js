@@ -372,7 +372,8 @@ const QuizMath = () => {
   
   
         
-        <Box sx={{ mt: 8, display: 'flex', justifyContent: 'space-between' }}>
+        <Box sx={{ mt: 8, display: 'flex', justifyContent: 'space-between' }}
+        >
           <Box sx={{ flexGrow: 1 }}>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <Typography variant="h3" sx={{ color: teal[300] }}>
