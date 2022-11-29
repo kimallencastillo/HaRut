@@ -24,7 +24,7 @@ function App() {
     const historyParam = useNavigate();
     const runHandpose = async() => {
         const net = await handpose.load();
-        //console.log("handpose model loaded");
+        console.log("handpose model loaded");
         // loop and detect hand
         setInterval(() => {
             detect(net)
@@ -67,15 +67,17 @@ function App() {
                 ])
                 const gesture = await GE.estimate(hand[0].landmarks, 8);
                 if (gesture.gestures !== undefined && gesture.gestures.length > 0) {
-                    //console.log(gesture.gestures);
+                    console.log(gesture.gestures);
                     const confidence = gesture.gestures.map(
                         (prediction) => prediction.score
                     );
+                    console.log(confidence);
                     const maxConfidence = confidence.indexOf(
                         Math.max.apply(null, confidence)
                     );
+                    //console.log(maxConfidence);
                     setEmoji(gesture.gestures[maxConfidence].name);
-                    //console.log(emoji);
+                    console.log(emoji);
                 }
             }
 
@@ -86,7 +88,9 @@ function App() {
         }
     }
 
-    useEffect(()=>{runHandpose()},[]);
+    useEffect(()=>{
+        runHandpose()}
+        ,[]);
     const videoComponentHeight = 480;
     return ( 
         <div className = "App" style={{marginTop: "55px"}}>
@@ -138,8 +142,6 @@ function App() {
                 ""
             )
         } 
-      
-       <div></div>
         </div>
     );
 }

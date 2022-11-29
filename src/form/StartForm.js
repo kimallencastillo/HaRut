@@ -51,22 +51,23 @@ const Form = (props) => {
     return (
           <div className="appForm" >
              <div className="container-form">
-             <img src={harut} style={{
+                <img src={harut} style={{
                         width: 600,
                         height: 700,
                         marginTop: 60
                     }} alt="logo" />
-                <div id="home" className="flex-column flex-center">   
+                  <div id="home" className="flex-column flex-center">
+                       
                     <h1>WELCOME!!</h1>
-                    <>{/*FORM START*/}</>
-                      <form onSubmit={handleSubmit}>
-                          <h3>Name : </h3> <input type="text" name='name' className="input-name" onChange={handleChange} placeholder="Name" />    
-                          <h3>Age : </h3> <input type="number" name='age'
-                          className="input-name" onChange={handleChange} placeholder="age"/> 
+                      <>{/*FORM START*/}</>
+                        <form onSubmit={handleSubmit}>
+                            <h3>Name : </h3> <input type="text" name='name' className="input-name" onChange={handleChange} placeholder="Name" />    
+                            <h3>Age : </h3> <input type="number" name='age'
+                            className="input-name" onChange={handleChange} placeholder="age"/> 
                   
-                          <button className="btn-accept"> Submit </button>
-                            
-                      </form>
+                            <button className="btn-accept"> Submit </button>
+                          
+                    </form>
                 </div>
               </div>
             </div>
