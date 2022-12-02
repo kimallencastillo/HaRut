@@ -69,9 +69,10 @@
 /* Menu */
 /*@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
 */
-
+/*
 @import url('https://fonts.googleapis.com/css2?family=Trispace:wght@400;600;700&display=swap');
-
+*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 * {
  
     box-sizing: border-box;
@@ -79,7 +80,9 @@
     padding: 0;
     font-size: 62.5%;
     transition: all 0.15s ease;
-    font-family: 'Trispace', sans-serif;
+    /*font-family: 'Trispace', sans-serif;*/
+    font-family: 'Bebas Neue', cursive;
+
 }
 
 h1 {
@@ -538,7 +541,9 @@ input::placeholder {
   font-size: 162.5%;
   margin: 0;
     padding: 0;
-  font-family: 'Nova Square', cursive;
+  /*font-family: 'Nova Square', cursive;*/
+  font-family: 'Bebas Neue', cursive;
+
 }
 .table{
  

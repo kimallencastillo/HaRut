@@ -29,7 +29,7 @@ const ScoreBoard = ({data}) => {
     var rank = 1;
     //<a href="/" className="btn_1">Go Home<i className="fas fa-home"></i></a>      
     return (
-        <div className="">   
+        <div className="container">   
             <h1>SCOREBOARD</h1>                    
             {/* table */}
             <table className="table table-bordered table-dark" >
