@@ -6,34 +6,48 @@ import { history } from '../utils/history';
 import MenuBg from '../music/quizBg2.mp3';
 import logo from '../img/logo.png';
 import { useEffect, useState } from 'react';
-
+import { useAudio } from "react-awesome-audio";
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import PauseIcon from '@mui/icons-material/Pause';
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
+import VolumeOffIcon from '@mui/icons-material/VolumeOff';
 
 
 export default function Header() {
-  
+
   var accountStatus = JSON.parse(localStorage.getItem('account'));
   var name = JSON.parse(localStorage.getItem('name'));
   var age = JSON.parse(localStorage.getItem('account'));
   const [changeName, setChangeName] = useState(false)
-  useEffect(()=> {
-    if(accountStatus) {
+  useEffect(() => {
+    if (accountStatus) {
       setChangeName(true)
-    }else {
+    } else {
       setChangeName(false)
     }
   }, [changeName])
   //console.log(accountStatus)
   const handleSubmit = (e) => {
-    if(accountStatus){
+    if (accountStatus) {
       localStorage.setItem('account', JSON.stringify(false));
       history.push('/');
       history.go(0);
-    }else {
+    } else {
       localStorage.setItem('account', JSON.stringify(false));
       history.push('/');
       history.go(0);
     }
   }
+  let { isPlaying, play, pause, toggle, onLoadedData } = useAudio({
+    isPlaying: true,
+    src: MenuBg,
+    loop: true,
+  });
+
+
+  //  
+  // test audio
+
   return (
     <Box
       sx={{
@@ -61,9 +75,9 @@ export default function Header() {
               width: 'auto',
             }}
           />
-         
+
           <Typography variant="h5" sx={{ fontWeight: 500, color: teal[400] }}>
-     
+
           </Typography>
         </Box>
         <Box
@@ -79,29 +93,18 @@ export default function Header() {
             },
           }}
         >
-           <ReactAudioPlayer 
-              autoPlay
-              src={MenuBg}
-              controls
-              loop
-              className='bg-music'
-              style={{
-                width: "190px",
-                background: "#7E27A4"
-              }}
-              
-          />
-          
-          <Button
-            onClick={handleSubmit}
-            style={{
-              fontSize: "15px"
-            }}
-          >
-            
-          </Button>
-        
-         
+          <div>
+            <Button
+              onClick={toggle}>
+              {isPlaying ? <VolumeOffIcon  sx={{ width: "40px", height: "30px", color: "white" }} /> :  <VolumeUpIcon sx={{ width: "40px", height: "30px", color: "white" }} />  }
+            </Button>
+          </div>
+          <div> 
+
+          </div>
+    
+
+
           <Button
             onClick={handleSubmit}
             sx={{
@@ -111,7 +114,7 @@ export default function Header() {
               fontSize: "15px"
             }}
           >
-          { changeName ? "Log out" : "Login"}
+            {changeName ? "Log out" : "Login"}
           </Button>
 
         </Box>
