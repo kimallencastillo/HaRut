@@ -26,7 +26,7 @@ import { Box, Button, LinearProgress, Paper, Switch, Typography, } from '@mui/ma
 import { deepPurple, grey, teal, green, red, blue } from '@mui/material/colors';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import { Container } from '@mui/system';
-import NavBar from './components/header';
+import NavBar from './components/header2';
 // Subjects 
 import Quiz_Math from './form/subject/math/Quiz_Math';
 import Quiz_Scie from './form/subject/science/QuizScie';
