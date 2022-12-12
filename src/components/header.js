@@ -42,6 +42,7 @@ export default function Header() {
     isPlaying: true,
     src: MenuBg,
     loop: true,
+    
   });
 
 

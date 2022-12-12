@@ -1,6 +1,11 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate} from 'react-router-dom';
 //import { history } from '../utils/history';
+//import Confetti from 'react-dom-confetti';
+import useWindowSize from 'react-use/lib/useWindowSize'
+import Confetti from 'react-confetti'
+import hooray from '../music/hooray.mp3'
+import { useAudio } from 'react-use';
 
 //import Form from './StartForm'
 /* Get the score and the player name to localstorage */
@@ -72,12 +77,33 @@ const Score = ({data}) =>{
             )
             }
     */
+    const config = {
+        angle: 90,
+        spread: 360,
+        startVelocity: 40,
+        elementCount: 70,
+        dragFriction: 0.12,
+        duration: 3000,
+        stagger: 3,
+        width: "10px",
+        height: "10px",
+        perspective: "500px",
+        colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
+        };
+        const { width, height } = useWindowSize()
+        const audio = new Audio(hooray);
+        audio.play()
+        const [isExploding, setIsExploding] = React.useState(true);
     return (
         <>
         <div style={{marginTop: "50px"}}></div>
         <div className="container">
             <div id="highScores" className="flex-center flex-column">
                 <h1>{score} </h1>
+                {audio.play && isExploding && <Confetti active={ isExploding } config={ config }
+                width={width}
+                height={height}
+                /> }
                 <span className="scores-h2">
                 <h2 >Enter your name below to save your score!</h2>
                 </span>
