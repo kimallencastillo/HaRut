@@ -77,6 +77,8 @@ const Score = ({data}) =>{
             )
             }
     */
+
+   // confetti
     const config = {
         angle: 90,
         spread: 360,
@@ -89,11 +91,14 @@ const Score = ({data}) =>{
         height: "10px",
         perspective: "500px",
         colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
-        };
-        const { width, height } = useWindowSize()
-        const audio = new Audio(hooray);
-        audio.play()
-        const [isExploding, setIsExploding] = React.useState(true);
+    };
+
+    const { width, height } = useWindowSize()
+    //const audio = new Audio(hooray);
+    //audio.play()
+    const [isExploding, setIsExploding] = React.useState(true);
+    
+    
     return (
         <>
         <div style={{marginTop: "50px"}}></div>
