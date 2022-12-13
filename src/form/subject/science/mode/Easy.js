@@ -5,7 +5,7 @@ export const easyQuestions = [
       answerOptions: [
         { symbol: '✌', answerText: 'Duck', isCorrect: true },
         { symbol: '🤟', answerText: 'Dog', isCorrect: false },
-        { symbol: '✋', answerText: 'Cat', isCorrect: false },
+        //{ symbol: '✋', answerText: 'Cat', isCorrect: false },
         //{ symbol: '👍', answerText: 'Sheep', isCorrect: false },
       ],
     },
@@ -13,8 +13,8 @@ export const easyQuestions = [
       questionText: 'A male cow is called?',
       answerOptions: [
         { symbol: '✌', answerText: 'Dog', isCorrect: false },
-        { symbol: '🤟', answerText: 'Sheep', isCorrect: false },
-        { symbol: '✋', answerText: 'Ox', isCorrect: true },
+        { symbol: '🤟', answerText: 'Ox', isCorrect: true },
+        //{ symbol: '✋', answerText: 'Ox', isCorrect: true },
         //{ symbol: '👍', answerText: 'Monkey', isCorrect: false },
       ],
     },
@@ -23,7 +23,7 @@ export const easyQuestions = [
       answerOptions: [
         { symbol: '✌', answerText: 'Rectangle', isCorrect: false },
         { symbol: '🤟', answerText: 'Circle ', isCorrect: true },
-        { symbol: '✋', answerText: 'Square', isCorrect: false },
+        //{ symbol: '✋', answerText: 'Square', isCorrect: false },
         //{ symbol: '👍', answerText: 'Lungs', isCorrect: false },
       ],
     },
@@ -32,7 +32,7 @@ export const easyQuestions = [
       answerOptions: [
         { symbol: '✌', answerText: 'Chicken', isCorrect: false },
         { symbol: '🤟', answerText: 'fish', isCorrect: true },
-        { symbol: '✋', answerText: 'Pig', isCorrect: false },
+        //{ symbol: '✋', answerText: 'Pig', isCorrect: false },
         //{ symbol: '👍', answerText: 'Nostrils', isCorrect: true },
       ],
     },

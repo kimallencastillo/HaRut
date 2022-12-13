@@ -5,7 +5,7 @@ export const hardQuestions = [
       { symbol: '✌', answerText: 'eating', isCorrect: false },
       { symbol: '🤟', answerText: 'sleeping', isCorrect: false },
       { symbol: '✋', answerText: 'An action', isCorrect: true },
-      //{ symbol: '👍', answerText: '', isCorrect: false },
+      { symbol: '👍', answerText: 'Running', isCorrect: false },
     ],
   },
   {
@@ -50,7 +50,7 @@ export const hardQuestions = [
       { symbol: '✌', answerText: 'everybody', isCorrect: false },
       { symbol: '🤟', answerText: 'anyone', isCorrect: false },
       { symbol: '✋', answerText: 'mine ', isCorrect: true },
-      //{ symbol: '👍', answerText: '', isCorrect: false },
+      { symbol: '👍', answerText: 'Moving', isCorrect: false },
     ],
   },
   {
@@ -67,8 +67,8 @@ export const hardQuestions = [
     answerOptions: [
       { symbol: '✌', answerText: 'Intransitive verb', isCorrect: false },
       { symbol: '🤟', answerText: 'Transitive verb ', isCorrect: true },
-      //{ symbol: '✋', answerText: '', isCorrect: false },
-      //{ symbol: '👍', answerText: '', isCorrect: false },
+      { symbol: '✋', answerText: 'Definite', isCorrect: false },
+      { symbol: '👍', answerText: 'Indefinite', isCorrect: false },
     ],
   },
   {

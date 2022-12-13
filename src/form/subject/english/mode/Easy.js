@@ -7,8 +7,8 @@ export const easyQuestions = [
     questionText: 'They _______ not very happy.',
     answerOptions: [
       { symbol: '✌', answerText: 'is', isCorrect: false },
-      { symbol: '🤟', answerText: 'am', isCorrect: false },
-      { symbol: '✋', answerText: 'are', isCorrect: true },
+      { symbol: '🤟', answerText: 'are', isCorrect: true },
+      //{ symbol: '✋', answerText: 'are', isCorrect: true },
     ],
   },
   {
@@ -16,7 +16,7 @@ export const easyQuestions = [
     answerOptions: [
       { symbol: '✌', answerText: 'is', isCorrect: true },
       { symbol: '🤟', answerText: 'am', isCorrect: false },
-      { symbol: '✋', answerText: 'are', isCorrect: false },
+      //{ symbol: '✋', answerText: 'are', isCorrect: false },
     ],
   },
   {
@@ -24,7 +24,7 @@ export const easyQuestions = [
     answerOptions: [
       { symbol: '✌', answerText: 'is', isCorrect: false },
       { symbol: '🤟', answerText: 'are', isCorrect: true },
-      { symbol: '✋', answerText: 'am', isCorrect: false },
+      //{ symbol: '✋', answerText: 'am', isCorrect: false },
     ],
   },
   {
@@ -32,15 +32,15 @@ export const easyQuestions = [
     answerOptions: [
       { symbol: '✌', answerText: 'Mud ', isCorrect: true },
       { symbol: '🤟', answerText: 'Sing', isCorrect: false },
-      { symbol: '✋', answerText: 'Ring ', isCorrect: false },
+      //{ symbol: '✋', answerText: 'Ring ', isCorrect: false },
     ],
   },
   {
     questionText: 'Identify pronoun from sentence: I am busy at school today',
     answerOptions: [
       { symbol: '✌', answerText: 'busy', isCorrect: false },
-      { symbol: '🤟', answerText: 'am', isCorrect: false },
-      { symbol: '✋', answerText: 'I', isCorrect: true },
+      { symbol: '🤟', answerText: 'I', isCorrect: true },
+      //{ symbol: '✋', answerText: 'I', isCorrect: true },
     ],
   },
     

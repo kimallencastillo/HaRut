@@ -11,8 +11,8 @@ const questions = [
       answerOptions: [
         { symbol: '✌', answerText: 'Tundra', isCorrect: false },
         { symbol: '🤟', answerText: 'Mountainous', isCorrect: true },
-        { symbol: '🤙', answerText: 'Desert', isCorrect: false },
-        { symbol: '👍', answerText: 'Tropical rain forest', isCorrect: false },
+        //{ symbol: '🤙', answerText: 'Desert', isCorrect: false },
+        //{ symbol: '👍', answerText: 'Tropical rain forest', isCorrect: false },
       ],
     },
     {
@@ -20,26 +20,26 @@ const questions = [
       answerOptions: [
         { symbol: '✌', answerText: 'Pyramids', isCorrect: true },
         { symbol: '🤟', answerText: 'Taj Mahal', isCorrect: false },
-        { symbol: '🤙', answerText: 'Burj Khalifa', isCorrect: false },
-        { symbol: '👍', answerText: 'Dubai', isCorrect: false },
+        //{ symbol: '🤙', answerText: 'Burj Khalifa', isCorrect: false },
+        //{ symbol: '👍', answerText: 'Dubai', isCorrect: false },
       ],
     },
     {
       questionText: 'Which ancient people built pyramids',
       answerOptions: [
         { symbol: '✌', answerText: 'chinese', isCorrect: false },
-        { symbol: '🤟', answerText: 'Summerians', isCorrect: false },
-        { symbol: '🤙', answerText: 'Egyptians', isCorrect: true },
-        { symbol: '👍', answerText: 'Indians', isCorrect: false },
+        { symbol: '🤙', answerText: 'Egyptians', isCorrect: true  },
+        //{ symbol: '🤟', answerText: 'Summerians', isCorrect: false },
+        //{ symbol: '👍', answerText: 'Indians', isCorrect: false },
       ],
     },
     {
       questionText: 'Who was the Roman god of fire?',
       answerOptions: [
-        { symbol: '✌', answerText: 'Tree', isCorrect: false },
+        { symbol: '✌', answerText: 'Vulcan', isCorrect: true },
         { symbol: '🤟', answerText: 'Montains', isCorrect: false },
-        { symbol: '🤙', answerText: 'Moon', isCorrect: false },
-        { symbol: '👍', answerText: 'Vulcan', isCorrect: true },
+        //{ symbol: '🤙', answerText: 'Moon', isCorrect: false },
+        //{ symbol: '👍', answerText: 'Vulcan', isCorrect: true },
       ],
     },
     {
@@ -47,8 +47,8 @@ const questions = [
       answerOptions: [
         { symbol: '✌', answerText: '29', isCorrect: false },
         { symbol: '🤟', answerText: '20', isCorrect: true },
-        { symbol: '🤙', answerText: '15', isCorrect: false },
-        { symbol: '👍', answerText: '23', isCorrect: false },
+        //{ symbol: '🤙', answerText: '15', isCorrect: false },
+        //{ symbol: '👍', answerText: '23', isCorrect: false },
       ],
     },
    

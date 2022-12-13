@@ -5,8 +5,8 @@ export const medQuestions = [
       answerOptions: [
         { symbol: '✌', answerText: '10', isCorrect: false },
         { symbol: '🤟', answerText: '35', isCorrect: false },
-        { symbol: '✋', answerText: '13', isCorrect: false },
-        { symbol: '👍', answerText: '12', isCorrect: true },
+        { symbol: '✋', answerText: '12', isCorrect: true },
+        //{ symbol: '👍', answerText: '12', isCorrect: true },
       ],
     },
     {
@@ -15,16 +15,16 @@ export const medQuestions = [
         { symbol: '✌', answerText: '220mins', isCorrect: true },
         { symbol: '🤟', answerText: '180mins', isCorrect: false },
         { symbol: '✋', answerText: '120mins', isCorrect: false },
-        { symbol: '👍', answerText: '240mins', isCorrect: false },
+        //{ symbol: '👍', answerText: '240mins', isCorrect: false },
       ],
     },
     {
-      questionText: 'How many 40 minutes are there in 8 hours?',
+      questionText: "What's 8 x 2?",
       answerOptions: [
         { symbol: '✌', answerText: '13', isCorrect: false },
-        { symbol: '🤟', answerText: '22', isCorrect: false },
+        { symbol: '🤟', answerText: '24', isCorrect: true },
         { symbol: '✋', answerText: '15', isCorrect: false },
-        { symbol: '👍', answerText: '12', isCorrect: true },
+        //{ symbol: '👍', answerText: '12', isCorrect: true },
       ],
     },
     {
@@ -33,7 +33,7 @@ export const medQuestions = [
         { symbol: '✌', answerText: '22', isCorrect: false },
         { symbol: '🤟', answerText: '17', isCorrect: false },
         { symbol: '✋', answerText: '14', isCorrect: true },
-        { symbol: '👍', answerText: '15', isCorrect: false },
+        //{ symbol: '👍', answerText: '15', isCorrect: false },
       ],
     },
     {
@@ -42,7 +42,7 @@ export const medQuestions = [
         { symbol: '✌', answerText: '12 ', isCorrect: false },
         { symbol: '🤟', answerText: '16', isCorrect: true },
         { symbol: '✋', answerText: '14', isCorrect: false },
-        { symbol: '👍', answerText: '18', isCorrect: false },
+        //{ symbol: '👍', answerText: '18', isCorrect: false },
       ],
     },
     {
@@ -51,7 +51,7 @@ export const medQuestions = [
         { symbol: '✌', answerText: '4', isCorrect: true },
         { symbol: '🤟', answerText: '8', isCorrect: false },
         { symbol: '✋', answerText: '2', isCorrect: false },
-        { symbol: '👍', answerText: '5', isCorrect: false },
+        //{ symbol: '👍', answerText: '5', isCorrect: false },
       ],
     },
     {
@@ -60,7 +60,7 @@ export const medQuestions = [
         { symbol: '✌', answerText: '5', isCorrect: false },
         { symbol: '🤟', answerText: '7', isCorrect: false },
         { symbol: '✋', answerText: '6 ', isCorrect: true },
-        { symbol: '👍', answerText: '4', isCorrect: false },
+        //{ symbol: '👍', answerText: '4', isCorrect: false },
       ],
     },
 ]
