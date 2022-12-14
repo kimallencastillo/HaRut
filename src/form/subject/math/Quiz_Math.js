@@ -204,10 +204,10 @@ const QuizMath = () => {
         if(questions[currentQuestion].answerOptions[finalAnswer - 1].isCorrect) {
         //history.push({ pathname: '/score', search: `?score=${ score }&name=${ name }&age=${ age }` });
         //history.go(0);
-        historyParam( `/score?score=${ score }&name=${ name }&age=${ age }`, {replace: `?score=${ score }&name=${ name }&age=${ age }`})
+        historyParam( `/score?score=${ score }&name=${ name }&age=${ age }`, {replace: `?score=${ score }&congrats=${ true }&name=${ name }&age=${ age }`})
         
         } else {
-        historyParam( `/score?score=${ score }&name=${ name }&age=${ age }`, {replace: `?score=${ score }&name=${ name }&age=${ age }`})
+        historyParam( `/score?score=${ score }&name=${ name }&age=${ age }`, {replace: `?score=${ score }&congrats=${ true }&name=${ name }&age=${ age }`})
         //history.push({ pathname: '/score', search: `?score=${ score }&name=${ name }&age=${ age }` });
         //history.go(0);  
         }

@@ -1,6 +1,8 @@
 import { Link , useParams} from 'react-router-dom';
 import React, { useRef, useState } from "react";
+import useSound from 'use-sound';
 import harut from './logo.png';
+import letsplay from '../music/letsplay.mp3'
 /*
 import MenuBg from '../music/quizBg.mp3';
 import Sound from 'react-sound';
@@ -23,7 +25,20 @@ const Menu = ({data}) => {
     ) => {}
      <h1>Age, { age }</h1>
     */
-    const [play, setPlay] = useState(true)
+    //const [play, setPlay] = useState(true)
+    const [play, { stop }] = useSound(letsplay);
+    const congrats = () =>{
+        const audio = new Audio(letsplay);
+     
+            audio.play();
+            console.log("Working");
+      
+    }
+  
+        
+    
+  
+    
     return (
       
           <header className="App-header">
@@ -38,7 +53,7 @@ const Menu = ({data}) => {
                         <Link to={{
                             pathname: "/category",
                             search: `?name=${ name }&age=${ age }`
-                        }} className="btn">Play</Link>
+                        }} className="btn" onFocus={play} >Let's Play!!</Link>
                          <Link to= {`/testGesture/${name}/${age}`} id="test-btn" className="btn">Test Gestures</Link> 
                         <Link to= {`/scoreBoard/${name}/${age}`} id="highscore-btn" className="btn">High Scores<i className="fas fa-crown"></i></Link> 
                         <br/><br/>    

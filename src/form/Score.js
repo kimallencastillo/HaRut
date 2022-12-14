@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate} from 'react-router-dom';
 //import { history } from '../utils/history';
 //import Confetti from 'react-dom-confetti';
@@ -17,11 +17,13 @@ const Score = ({data}) =>{
     let score = params.score;
     let userName = params.name;
     let age = params.age;
+    let playaudio = params.age;
     const historyParam = useNavigate();
     const [name, setName] = useState(userName);
     //const [isFormVisible, setIsFormVisible] = useState(true);
     let SaveScore = false;
-    
+    let setPlayAudio = false;
+    setPlayAudio = playaudio;
     /*
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -98,14 +100,27 @@ const Score = ({data}) =>{
     //audio.play()
     const [isExploding, setIsExploding] = React.useState(true);
     
+    const congrats = (congrats) =>{
+        if(congrats){
+            const audio = new Audio(hooray);
+            audio.play()
+        }else {
+
+        }
+    }
+    // Play Audio
+    useEffect(() => {
+        congrats(setPlayAudio);
+    }, [setPlayAudio]);
     
+    // create a function for audio to play once only
     return (
         <>
         <div style={{marginTop: "50px"}}></div>
         <div className="container">
             <div id="highScores" className="flex-center flex-column">
                 <h1>{score} </h1>
-                {audio.play && isExploding && <Confetti active={ isExploding } config={ config }
+                {isExploding && <Confetti active={ isExploding } config={ config }
                 width={width}
                 height={height}
                 /> }
