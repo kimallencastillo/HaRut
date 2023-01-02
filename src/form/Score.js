@@ -6,6 +6,25 @@ import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
 import hooray from '../music/hooray.mp3'
 import { useAudio } from 'react-use';
+import { Box, Button, LinearProgress, Paper, Switch, Typography, } from '@mui/material';
+import { deepPurple, grey, teal, green, red, blue, orange } from '@mui/material/colors';
+
+/* Questions */ 
+
+// Math Question
+import { easyMathQuestions } from './showresult/math/Easy';
+import { medMathQuestions } from './showresult/math/Medium';
+import { hardMathQuestions } from './showresult/math/Hard';
+
+// English Questions
+import { easyEngQuestions } from './showresult/english/Easy';
+import { medEngQuestions } from './showresult/english/Medium';
+import { hardEngQuestions } from './showresult/english/Hard';
+
+// Science Questions
+import { easyScieQuestions } from './showresult/science/Easy';
+import { medScieQuestions } from './showresult/science/Medium';
+import { hardScieQuestions } from './showresult/science/Hard';
 
 //import Form from './StartForm'
 /* Get the score and the player name to localstorage */
@@ -18,13 +37,59 @@ const Score = ({data}) =>{
     let userName = params.name;
     let age = params.age;
     let playaudio = params.age;
+    let mode = params.mode;
+    let subject = params.subject;
     const historyParam = useNavigate();
     const [name, setName] = useState(userName);
     //const [isFormVisible, setIsFormVisible] = useState(true);
     let SaveScore = false;
     let setPlayAudio = false;
     setPlayAudio = playaudio;
+    let questions = []
+    if(subject === "" || mode === "") {
+    } else {
+        // check subject
+        // Math
+        if(subject === "math"){
+            if(mode === "easy") {
+                questions = easyMathQuestions;
+            } else if(mode === "medium") {
+                questions = medMathQuestions;
+            } else if(mode === "hard") {
+                questions = hardMathQuestions;
+            }
+        }
+        // English
+        if(subject === "english"){
+            if(mode === "easy") {
+                questions = easyScieQuestions;
+            } else if(mode === "medium") {
+                questions = medEngQuestions;
+            } else if(mode === "hard") {
+                questions = hardEngQuestions;
+            }
+        }
+        // Science
+        if(subject === "science"){
+            if(mode === "easy") {
+                questions = easyMathQuestions;
+            } else if(mode === "medium") {
+                questions = medScieQuestions;
+            } else if(mode === "hard") {
+                questions = hardScieQuestions;
+            }
+        }
+    }
+   
     /*
+    if(mode === "easy") {
+        questions = easyQuestions;
+      } else if(mode === "medium") {
+        questions = medQuestions;
+      } else if(mode === "hard") {
+        questions = hardQuestions;
+      }
+    
     const handleSubmit = (event) => {
         event.preventDefault();
         alert(`The Player name is: ${name} and the Score is: ${score} and the save data is: ${SaveScore}`);
@@ -111,8 +176,12 @@ const Score = ({data}) =>{
     // Play Audio
     useEffect(() => {
         congrats(setPlayAudio);
+        console.log(questions);
+      
     }, [setPlayAudio]);
-    
+    let ctr = 1;
+    // loop 
+
     // create a function for audio to play once only
     return (
         <>
@@ -142,9 +211,62 @@ const Score = ({data}) =>{
             
             </div>
         </div>
+
+     
+ 
+  
+          
+          {/* Question */}
+  
+         {/* End Question */}
          
+        {/* Questions */}
+        <Box sx={{ mt: 4 }}>
+            {/* Question */}
+              <h2 className='question-text'>Correct answers</h2> 
+        </Box>
+        <Box
+          sx={{ mt: 4, flexGrow: 1, display: 'flex', flexDirection: 'column' }}
+        >
+            
+          {questions.map((option, index) => (
+             
+            <Paper
+              className="choice-container"  
+              key={index}
+              sx={{
+                mb: 1,
+                p: 2,
+                background: orange[700],
+                display: 'flex',
+                alignItems: 'center',
+              }}
+            >
+          
+            {/* Question */}
+
+              <h2 className='question-text'>{ctr++}.) {option.questionText} </h2> 
+          
+   
+            </Paper>
+          ))}
+        </Box>
+    
         </>
         )
 }
 
 export default Score;
+
+/*
+ background: showCorrectAns
+                  ? option.isCorrect
+                    ? green[700]
+                    : red[700]
+                  : showSelectAns
+                  ? selectedGesture - 1 === index
+                    ? blue[700]
+                    : blue[500]
+                  : blue[500],
+                color: grey[50],
+                */

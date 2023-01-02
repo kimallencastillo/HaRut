@@ -244,7 +244,7 @@ const Quiz_Eng = () => {
     useEffect(() => {
         handpose.load().then((result) => {
             runHandpose(result);
-            setRandomQ(false);
+            //setRandomQ(false);
         })
     })
     

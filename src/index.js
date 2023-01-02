@@ -11,7 +11,7 @@ import reportWebVitals from './reportWebVitals';
 
 import Menu from './form/Menu';
 import Form from './form/StartForm';
-//
+//form
 import Quiz from './form/Quiz'
 import Score from './form/Score'
 import ScoreBoard from './form/ScoreBoard'
@@ -32,6 +32,10 @@ import Quiz_Math from './form/subject/math/Quiz_Math';
 import Quiz_Scie from './form/subject/science/QuizScie';
 import QuizHistory from './form/subject/history/QuizHistory';
 import Quiz_Eng from './form/subject/english/QuizEng';
+// Sounds
+import MathFx from './music/math.mp3';
+import EngFx from './music/english.mp3';
+import ScieFx from './music/science.mp3';
 // Menu
 function App() {
   const currentPage = window.location.pathname;
@@ -84,6 +88,28 @@ const Category = () => {
     historyParam( `/menu/${name}/${age}`, {replace: `${name}/${age}`})
 
   }
+
+  // Math Sound
+  const mthFx = () =>{
+    const audio = new Audio(MathFx);
+    audio.play();
+    console.log("Working");
+  }
+
+  // English Sound
+  const engFx = () =>{
+    const audio = new Audio(EngFx);
+    audio.play();
+    console.log("Working");
+  }
+
+  // Science Sound
+  const scieFx = () =>{
+    const audio = new Audio(ScieFx);
+    audio.play();
+    console.log("Working");
+  }
+
     return (
       <nav className="catg">
         <div className="container">
@@ -92,15 +118,15 @@ const Category = () => {
               <Link to={{
                           pathname: "/math",
                           search: `?name=${ name }&age=${ age }`
-                        }} className="btn-math" > Math </Link>
+                        }} className="btn-math" onFocus={mthFx} > Math </Link>
               <Link to={{
                           pathname: "/science",
                           search: `?name=${ name }&age=${ age }`
-                        }} className="btn-scie"> Science </Link>
+                        }} className="btn-scie" onFocus={scieFx} > Science </Link>
               <Link to={{
                           pathname: "/quizEng",
                           search: `?name=${ name }&age=${ age }`
-                        }} className="btn-his"> English </Link>  
+                        }} className="btn-his" onFocus={engFx} > English </Link>  
 
                         
                 <button onClick={goHome} className="btn-accept"
@@ -116,7 +142,6 @@ const Category = () => {
 // Subjects //
 
 // English
-// Math //
 const EnglishQuiz = (props) => {
   const params = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop),
@@ -136,7 +161,7 @@ const EnglishQuiz = (props) => {
             <div className="level-container">
             <Link to={{
               pathname: "/quizEnglish",
-              search: `?mode=${ "easy" }&name=${ newName }&age=${ newAge }`
+              search: `?mode=${ "easy" }&name=${ newName }&age=${ newAge }&subject=${ "english"}`
             }} 
             style={{ background: (newAge <= 8) ? green[900] : red[900]  }}
             className="btn-easy"> Easy </Link> 
@@ -150,7 +175,7 @@ const EnglishQuiz = (props) => {
             <div className="level-container" >
             <Link to={{
               pathname: "/quizEnglish",
-              search: `?mode=${ "medium" }&name=${ newName }&age=${ newAge }`
+              search: `?mode=${ "medium" }&name=${ newName }&age=${ newAge }&subject=${ "english"}`
             }} 
             style={{ backgroundColor: (newAge >= 9  && newAge <= 12  ) ? green[900] : red[900]  }}
             className="btn-med"> Average  </Link>
@@ -163,7 +188,7 @@ const EnglishQuiz = (props) => {
             <div className="level-container">
             <Link to={{
               pathname: "/quizEnglish",
-              search: `?mode=${ "hard" }&name=${ newName }&age=${ newAge }`
+              search: `?mode=${ "hard" }&name=${ newName }&age=${ newAge }&subject=${ "english"}`
             }}
             style={{ backgroundColor: (newAge >= 13) ? green[900] : red[900] }}
             className="btn-hard"> Difficult </Link>
@@ -205,7 +230,7 @@ const MathQuiz = (props) => {
             <div className="level-container">
             <Link to={{
               pathname: "/quizMath",
-              search: `?mode=${ "easy" }&name=${ newName }&age=${ newAge }`
+              search: `?mode=${ "easy" }&name=${ newName }&age=${ newAge }&subject=${ "math"}`
             }} 
             style={{ background: (newAge <= 8) ? green[900] : red[900]  }}
             className="btn-easy"> Easy </Link> 
@@ -219,7 +244,7 @@ const MathQuiz = (props) => {
             <div className="level-container" >
             <Link to={{
               pathname: "/quizMath",
-              search: `?mode=${ "medium" }&name=${ newName }&age=${ newAge }`
+              search: `?mode=${ "medium" }&name=${ newName }&age=${ newAge }&subject=${ "math"}`
             }} 
             style={{ backgroundColor: (newAge >= 9  && newAge <= 12  ) ? green[900] : red[900]  }}
             className="btn-med"> Average  </Link>
@@ -232,7 +257,7 @@ const MathQuiz = (props) => {
             <div className="level-container">
             <Link to={{
               pathname: "/quizMath",
-              search: `?mode=${ "hard" }&name=${ newName }&age=${ newAge }`
+              search: `?mode=${ "hard" }&name=${ newName }&age=${ newAge }&subject=${ "math"}`
             }}
             style={{ backgroundColor: (newAge >= 13) ? green[900] : red[900] }}
             className="btn-hard"> Difficult </Link>
@@ -276,7 +301,7 @@ const ScieQuiz = (props) => {
             <div className="level-container">
             <Link to={{
               pathname: "/quizScie",
-              search: `?mode=${ "easy" }&name=${ newName }&age=${ newAge }`
+              search: `?mode=${ "easy" }&name=${ newName }&age=${ newAge }&subject=${ "science"}`
             }} 
             style={{ background: (newAge <= 8) ? green[900] : red[900]  }}
             className="btn-easy"> Easy </Link> 
@@ -290,7 +315,7 @@ const ScieQuiz = (props) => {
             <div className="level-container" >
             <Link to={{
               pathname: "/quizScie",
-              search: `?mode=${ "medium" }&name=${ newName }&age=${ newAge }`
+              search: `?mode=${ "medium" }&name=${ newName }&age=${ newAge }&subject=${ "science"}`
             }} 
             style={{ backgroundColor: (newAge >= 9  && newAge <= 12  ) ? green[900] : red[900]  }}
             className="btn-med"> Average  </Link>
@@ -303,7 +328,7 @@ const ScieQuiz = (props) => {
             <div className="level-container">
             <Link to={{
               pathname: "/quizScie",
-              search: `?mode=${ "hard" }&name=${ newName }&age=${ newAge }`
+              search: `?mode=${ "hard" }&name=${ newName }&age=${ newAge }&subject=${ "science"}`
             }}
             style={{ backgroundColor: (newAge >= 13) ? green[900] : red[900] }}
             className="btn-hard"> Difficult </Link>

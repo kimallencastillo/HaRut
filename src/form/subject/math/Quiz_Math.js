@@ -27,10 +27,15 @@ import { medQuestions } from './mode/Medium';
 import { hardQuestions } from './mode/Hard';
 //import { randoQuest } from './mode/randomQuestion';
 
+//Audio
+import correctAns from '../../../music/correctAns.mp3';
+import wrongAns from '../../../music/wrongAns.mp3';
+
 const QuizMath = () => {
     const params = new Proxy(new URLSearchParams(window.location.search), {
         get: (searchParams, prop) => searchParams.get(prop),
       });
+
     const historyParam = useNavigate();
     let mode = params.mode;
     let name = params.name;
@@ -94,6 +99,17 @@ const QuizMath = () => {
     // progress Bar
     const progressBarFull = document.querySelector('#progressBarFull');
 
+    // Audio 
+    const correctAnswer = () =>{
+      const audio = new Audio(correctAns);
+      audio.play();
+    }
+
+    const wrongAnswer = () =>{
+      const audio1 = new Audio(wrongAns);
+      audio1.play();
+    }
+
     // Handpose Model
     const detect = async(net) => {
         // Check data is available
@@ -132,8 +148,8 @@ const QuizMath = () => {
                 RaisedHandGesture,
                 LoveYouGesture,
                 RockOnGesture,
-                CallMeGesture,
-                RaisedFistGesture
+                //CallMeGesture,
+                //RaisedFistGesture
             ]);
             
             const gesture = await GE.estimate(hand[0].landmarks, 4);
@@ -194,6 +210,7 @@ const QuizMath = () => {
                     if(selectedGesture === answer) {
                         setFinalAnswer(selectedGesture);
                     } else {
+                      
                         setFinalAnswer(0);
                     }
                 }
@@ -204,10 +221,12 @@ const QuizMath = () => {
         if(questions[currentQuestion].answerOptions[finalAnswer - 1].isCorrect) {
         //history.push({ pathname: '/score', search: `?score=${ score }&name=${ name }&age=${ age }` });
         //history.go(0);
-        historyParam( `/score?score=${ score }&name=${ name }&age=${ age }`, {replace: `?score=${ score }&congrats=${ true }&name=${ name }&age=${ age }`})
+        historyParam( `/score?score=${ score }&name=${ name }&age=${ age }&subject=${ "math" }&mode=${ mode }`, 
+        {replace: `?score=${ score }&congrats=${ true }&name=${ name }&age=${ age }&subject=${ "math" }&mode=${ mode }`})
         
         } else {
-        historyParam( `/score?score=${ score }&name=${ name }&age=${ age }`, {replace: `?score=${ score }&congrats=${ true }&name=${ name }&age=${ age }`})
+          historyParam( `/score?score=${ score }&name=${ name }&age=${ age }&subject=${ "math" }&mode=${ mode }`, 
+          {replace: `?score=${ score }&congrats=${ true }&name=${ name }&age=${ age }&subject=${ "math" }&mode=${ mode }`})
         //history.push({ pathname: '/score', search: `?score=${ score }&name=${ name }&age=${ age }` });
         //history.go(0);  
         }
@@ -228,12 +247,15 @@ const QuizMath = () => {
     function checkCorrectAnswer() {
         if(questions[currentQuestion].answerOptions[finalAnswer - 1].isCorrect) {
             setScore(score + 100);
+            correctAnswer();
         }
         setShowCorrectAns(true);
         setTimeout(() => {
-            setShowCorrectAns(false);
             
-            getCurrentQuestion();
+            setShowCorrectAns(false);
+            //wrongAnswer();
+            getCurrentQuestion(); 
+          
         }, 3000);
         setFinalAnswer(0);
         
@@ -249,7 +271,7 @@ const QuizMath = () => {
     useEffect(() => {
         handpose.load().then((result) => {
             runHandpose(result);
-            setRandomQ(false);
+            //setRandomQ(false);
         })
     })
     

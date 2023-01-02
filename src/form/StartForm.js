@@ -4,8 +4,18 @@ import harut from '../img/logo.png';
 import { history } from '../utils/history';
 import './StartForm.css';
 import Menu from './Menu';
+import useSound from 'use-sound';
+
+// Sounds
+import name from '../music/name.mp3'
+import age from '../music/age.mp3'
+import submitSFX from '../music/submit.mp3'
 const Form = (props) => {
   const historyParam = useNavigate();
+  
+  const [enterName] = useSound(name);
+  const [enterAge] = useSound(age);
+  const [enterSubmitSFX] = useSound(submitSFX);
   const [details, setDetails] = useState({
     name: "",
     age: ""
@@ -21,7 +31,7 @@ const Form = (props) => {
         return {...prev, [name]: value}
     })
   }
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(details)
@@ -40,12 +50,27 @@ const Form = (props) => {
     //history.push({ pathname: '/menu', search: `?name=${ paramName }&age=${ paramAge }`});
     //history.go(0);
     accountStatus = true;
+
     localStorage.setItem('account', JSON.stringify(accountStatus));
     localStorage.setItem('name', JSON.stringify(paramName));
     localStorage.setItem('age', JSON.stringify(paramAge));
+    
     historyParam( `/menu/${paramName}/${paramAge}`, {replace: `${paramName}/${paramAge}`})
     } 
   }
+  // audio
+  /*const enterName = () =>{
+    const audio = new Audio(name);
+    audio.play();
+    //console.log("Working");
+  }*/
+  let i = 0;
+  /*const enterAge = () =>{
+    const audio = new Audio(age);
+    audio.play();
+    //console.log("Working");
+  }*/
+
   // <Link to={ `menu/${details.name}/${details.age}` } 
   //  className="btn-accept">Submit</Link>
     return (
@@ -61,11 +86,10 @@ const Form = (props) => {
                     <h1>WELCOME!!</h1>
                       <>{/*FORM START*/}</>
                         <form onSubmit={handleSubmit}>
-                            <h3>Name : </h3> <input type="text" name='name' className="input-name" onChange={handleChange} placeholder="Name" />    
+                            <h3>Name : </h3> <input type="text" name='name' className="input-name" onChange={handleChange} placeholder="Name" onClick={enterName} />    
                             <h3>Age : </h3> <input type="number" name='age'
-                            className="input-name" onChange={handleChange} placeholder="age"/> 
-                  
-                            <button className="btn-accept"> Submit </button>
+                            className="input-name" onChange={handleChange} onClick={enterAge} placeholder="age" /> 
+                            <button className="btn-accept" onClick={enterSubmitSFX}> Submit </button>
                           
                     </form>
                 </div>

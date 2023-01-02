@@ -97,7 +97,7 @@ export default function Header() {
           <div>
             <Button
               onClick={toggle}>
-              {isPlaying ? <VolumeOffIcon  sx={{ width: "40px", height: "30px", color: "white" }} /> :  <VolumeUpIcon sx={{ width: "40px", height: "30px", color: "white" }} />  }
+              { isPlaying ?   <VolumeUpIcon sx={{ width: "40px", height: "30px", color: "white" }} /> : <VolumeOffIcon  sx={{ width: "40px", height: "30px", color: "white" }} />  }
             </Button>
           </div>
           <div> 
