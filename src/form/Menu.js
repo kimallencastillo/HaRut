@@ -1,8 +1,10 @@
 import { Link , useParams} from 'react-router-dom';
 import React, { useRef, useState } from "react";
+import { Box, Button, Icon, LinearProgress, Paper, Switch, Typography, } from '@mui/material';
 import useSound from 'use-sound';
 import harut from './logo.png';
-import letsplay from '../music/letsplay.mp3'
+import letsplay from '../music/letsplay.mp3';
+import testhand from '../anims/testhand.gif'
 /*
 import MenuBg from '../music/quizBg.mp3';
 import Sound from 'react-sound';
@@ -27,12 +29,10 @@ const Menu = ({data}) => {
     */
     //const [play, setPlay] = useState(true)
     const [play, { stop }] = useSound(letsplay);
-    const congrats = () =>{
+    const letsPlay = () =>{
         const audio = new Audio(letsplay);
-     
-            audio.play();
-            console.log("Working");
-      
+        audio.play();
+        console.log("Working");
     }
   
         
@@ -53,8 +53,10 @@ const Menu = ({data}) => {
                         <Link to={{
                             pathname: "/category",
                             search: `?name=${ name }&age=${ age }`
-                        }} className="btn" onFocus={play} >Let's Play!!</Link>
-                         <Link to= {`/testGesture/${name}/${age}`} id="test-btn" className="btn">Test Gestures</Link> 
+                        }} className="btn" onFocus={letsPlay}>Let's Play!!</Link>
+                         <Link to= {`/testGesture/${name}/${age}`} id="test-btn" className="btn" >
+                         <Icon type={testhand}/>
+                           Test Gestures</Link> 
                         <Link to= {`/scoreBoard/${name}/${age}`} id="highscore-btn" className="btn">High Scores<i className="fas fa-crown"></i></Link> 
                         <br/><br/>    
                     </div>
