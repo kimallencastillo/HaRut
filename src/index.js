@@ -33,9 +33,17 @@ import Quiz_Scie from './form/subject/science/QuizScie';
 import QuizHistory from './form/subject/history/QuizHistory';
 import Quiz_Eng from './form/subject/english/QuizEng';
 // Sounds
+import useSound from 'use-sound';
 import MathFx from './music/math.mp3';
 import EngFx from './music/english.mp3';
 import ScieFx from './music/science.mp3';
+import catgFx from './music/Selcatg.mp3';
+import selcDif from './music/selectDifficulty.mp3';
+
+import mathTitle from './music/mathTitle.mp3';
+import englishTitle from './music/englishTitle.mp3';
+import scienceTitle from './music/scienceTitle.mp3';
+
 // Menu
 function App() {
   const currentPage = window.location.pathname;
@@ -100,21 +108,28 @@ const Category = () => {
   const engFx = () =>{
     const audio = new Audio(EngFx);
     audio.play();
-    console.log("Working");
+    //console.log("Working");
   }
 
   // Science Sound
   const scieFx = () =>{
     const audio = new Audio(ScieFx);
     audio.play();
-    console.log("Working");
+    //console.log("Working");
   }
-
+  
+  // Science Sound
+  const catgFxSound = () =>{
+    const audio = new Audio(catgFx);
+    audio.play();
+    //console.log("Working");
+  }
+ 
     return (
       <nav className="catg">
         <div className="container">
           <div id="home" className="flex-column flex-center">
-            <h1>Subject Category</h1>
+            <h1 className="title-image" onMouseEnter={catgFxSound} >Subject Category</h1>
               <Link to={{
                           pathname: "/math",
                           search: `?name=${ name }&age=${ age }`
@@ -151,19 +166,21 @@ const EnglishQuiz = (props) => {
 
   const [newAge, setNewAge] = useState(age)
   const [newName, setName] = useState(name);
-  const [mode, setMode] = useState("RECOMMENDED")
+  const [mode, setMode] = useState("RECOMMENDED");
+  const [selectDifficulty] = useSound(selcDif);
+  const [engSound] = useSound(englishTitle);
   return (
     <nav className="mode">  
       <div className="container_quiz">
         <div id="home" className="flex-column flex-center">
-          <h1>English</h1>
-          <h1>Select Difficulty</h1>
+          <h1 className="title-image" onMouseEnter={engSound}>English</h1>
+          <h1 className="title-image" onMouseEnter={selectDifficulty}>Select Difficulty</h1>
             <div className="level-container">
             <Link to={{
               pathname: "/quizEnglish",
               search: `?mode=${ "easy" }&name=${ newName }&age=${ newAge }&subject=${ "english"}`
             }} 
-            style={{ background: (newAge <= 8) ? green[900] : red[900]  }}
+            style={{ background: (newAge <= 8) ? "#4CBB17" : red[400]  }}
             className="btn-easy"> Easy </Link> 
 
             {(newAge <= 8) && <span 
@@ -177,7 +194,7 @@ const EnglishQuiz = (props) => {
               pathname: "/quizEnglish",
               search: `?mode=${ "medium" }&name=${ newName }&age=${ newAge }&subject=${ "english"}`
             }} 
-            style={{ backgroundColor: (newAge >= 9  && newAge <= 12  ) ? green[900] : red[900]  }}
+            style={{ backgroundColor: (newAge >= 9  && newAge <= 12  ) ? "#4CBB17" : red[400]  }}
             className="btn-med"> Average  </Link>
             {(newAge >= 9  && newAge <= 12) && <span 
             ><ArrowCircleLeftIcon
@@ -190,7 +207,7 @@ const EnglishQuiz = (props) => {
               pathname: "/quizEnglish",
               search: `?mode=${ "hard" }&name=${ newName }&age=${ newAge }&subject=${ "english"}`
             }}
-            style={{ backgroundColor: (newAge >= 13) ? green[900] : red[900] }}
+            style={{ backgroundColor: (newAge >= 13) ? "#4CBB17" : red[400] }}
             className="btn-hard"> Difficult </Link>
             {(newAge >= 13) && <span 
             ><ArrowCircleLeftIcon
@@ -220,19 +237,21 @@ const MathQuiz = (props) => {
 
   const [newAge, setNewAge] = useState(age)
   const [newName, setName] = useState(name);
-  const [mode, setMode] = useState("RECOMMENDED")
+  const [mode, setMode] = useState("RECOMMENDED");
+  const [selectDifficulty] = useSound(selcDif);
+  const [mathSound] = useSound(mathTitle);
   return (
     <nav className="mode">  
       <div className="container_quiz">
         <div id="home" className="flex-column flex-center">
-          <h1>MATH</h1>
-          <h1>Select Difficulty</h1>
+          <h1 className="title-image" onMouseEnter={mathSound}>MATH</h1>
+          <h1 className="title-image" onMouseEnter={selectDifficulty}>Select Difficulty</h1>
             <div className="level-container">
             <Link to={{
               pathname: "/quizMath",
               search: `?mode=${ "easy" }&name=${ newName }&age=${ newAge }&subject=${ "math"}`
             }} 
-            style={{ background: (newAge <= 8) ? green[900] : red[900]  }}
+            style={{ background: (newAge <= 8) ? "#4CBB17" : red[400]  }}
             className="btn-easy"> Easy </Link> 
 
             {(newAge <= 8) && <span 
@@ -246,7 +265,7 @@ const MathQuiz = (props) => {
               pathname: "/quizMath",
               search: `?mode=${ "medium" }&name=${ newName }&age=${ newAge }&subject=${ "math"}`
             }} 
-            style={{ backgroundColor: (newAge >= 9  && newAge <= 12  ) ? green[900] : red[900]  }}
+            style={{ backgroundColor: (newAge >= 9  && newAge <= 12  ) ? "#4CBB17" : red[400]  }}
             className="btn-med"> Average  </Link>
             {(newAge >= 9  && newAge <= 12) && <span 
             ><ArrowCircleLeftIcon
@@ -259,7 +278,7 @@ const MathQuiz = (props) => {
               pathname: "/quizMath",
               search: `?mode=${ "hard" }&name=${ newName }&age=${ newAge }&subject=${ "math"}`
             }}
-            style={{ backgroundColor: (newAge >= 13) ? green[900] : red[900] }}
+            style={{ backgroundColor: (newAge >= 13) ? "#4CBB17" : red[400] }}
             className="btn-hard"> Difficult </Link>
             {(newAge >= 13) && <span 
             ><ArrowCircleLeftIcon
@@ -291,19 +310,21 @@ const ScieQuiz = (props) => {
 
   const [newAge, setNewAge] = useState(age)
   const [newName, setName] = useState(name);
-  const [mode, setMode] = useState("RECOMMENDED")
+  const [mode, setMode] = useState("RECOMMENDED");
+  const [selectDifficulty] = useSound(selcDif);
+  const [scieSound] = useSound(scienceTitle);
   return (
     <nav className="mode">  
       <div className="container_quiz">
         <div id="home" className="flex-column flex-center">
-          <h1>SCIENCE</h1>
-          <h1>Select Difficulty</h1>
+          <h1 className="title-image" onMouseEnter={scieSound}>SCIENCE</h1>
+          <h1 className="title-image" onMouseEnter={selectDifficulty}>Select Difficulty</h1>
             <div className="level-container">
             <Link to={{
               pathname: "/quizScie",
               search: `?mode=${ "easy" }&name=${ newName }&age=${ newAge }&subject=${ "science"}`
             }} 
-            style={{ background: (newAge <= 8) ? green[900] : red[900]  }}
+            style={{ background: (newAge <= 8) ? "#4CBB17" : red[400]  }}
             className="btn-easy"> Easy </Link> 
 
             {(newAge <= 8) && <span 
@@ -317,7 +338,7 @@ const ScieQuiz = (props) => {
               pathname: "/quizScie",
               search: `?mode=${ "medium" }&name=${ newName }&age=${ newAge }&subject=${ "science"}`
             }} 
-            style={{ backgroundColor: (newAge >= 9  && newAge <= 12  ) ? green[900] : red[900]  }}
+            style={{ backgroundColor: (newAge >= 9  && newAge <= 12  ) ? "#4CBB17" : red[400]  }}
             className="btn-med"> Average  </Link>
             {(newAge >= 9  && newAge <= 12) && <span 
             ><ArrowCircleLeftIcon
@@ -330,7 +351,7 @@ const ScieQuiz = (props) => {
               pathname: "/quizScie",
               search: `?mode=${ "hard" }&name=${ newName }&age=${ newAge }&subject=${ "science"}`
             }}
-            style={{ backgroundColor: (newAge >= 13) ? green[900] : red[900] }}
+            style={{ backgroundColor: (newAge >= 13) ? "#4CBB17" : red[400] }}
             className="btn-hard"> Difficult </Link>
             {(newAge >= 13) && <span 
             ><ArrowCircleLeftIcon
@@ -374,7 +395,7 @@ const HistoryQuiz = (props) => {
               pathname: "/quizHistory",
               search: `?mode=${ "easy" }&name=${ newName }&age=${ newAge }`
             }} 
-            style={{ background: (newAge <= 8) ? green[900] : red[900]  }}
+            style={{ background: (newAge <= 8) ? "#4CBB17" : red[400]  }}
             className="btn-easy"> Easy </Link> 
 
             {(newAge <= 8) && <span 
@@ -388,7 +409,7 @@ const HistoryQuiz = (props) => {
               pathname: "/quizHistory",
               search: `?mode=${ "medium" }&name=${ newName }&age=${ newAge }`
             }} 
-            style={{ backgroundColor: (newAge >= 9  && newAge <= 12  ) ? green[900] : red[900]  }}
+            style={{ backgroundColor: (newAge >= 9  && newAge <= 12  ) ? "#4CBB17" : red[400]  }}
             className="btn-med"> Medium </Link>
             {(newAge >= 9  && newAge <= 12) && <span 
             ><ArrowCircleLeftIcon
@@ -401,7 +422,7 @@ const HistoryQuiz = (props) => {
               pathname: "/quizHistory",
               search: `?mode=${ "hard" }&name=${ newName }&age=${ newAge }`
             }}
-            style={{ backgroundColor: (newAge >= 13) ? green[900] : red[900] }}
+            style={{ backgroundColor: (newAge >= 13) ? "#4CBB17" : red[400] }}
             className="btn-hard"> Hard </Link>
             {(newAge >= 13) && <span 
             ><ArrowCircleLeftIcon

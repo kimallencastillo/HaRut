@@ -1,10 +1,12 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { createSearchParams, Link , useParams, useNavigate} from 'react-router-dom';
 import harut from '../img/logo.png';
 import { history } from '../utils/history';
 import './StartForm.css';
 import Menu from './Menu';
 import useSound from 'use-sound';
+import titleSound from '../music/harut.mp3';
+import welcomeFx from '../music/Welcome.mp3';
 
 // Sounds
 import name from '../music/name.mp3'
@@ -15,6 +17,7 @@ const Form = (props) => {
   
   const [enterName] = useSound(name);
   const [enterAge] = useSound(age);
+  const [welcomeSound] = useSound(welcomeFx);
   const [enterSubmitSFX] = useSound(submitSFX);
   const [details, setDetails] = useState({
     name: "",
@@ -31,6 +34,7 @@ const Form = (props) => {
         return {...prev, [name]: value}
     })
   }
+
   
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -73,6 +77,14 @@ const Form = (props) => {
 
   // <Link to={ `menu/${details.name}/${details.age}` } 
   //  className="btn-accept">Submit</Link>
+  const [audioSound, setAudioSound] = useState(false);
+    const titleFx =()=> {
+          const audio = new Audio(titleSound);
+        audio.play()
+      }
+  
+
+
     return (
           <div className="appForm" >
              <div className="container-form">
@@ -80,10 +92,10 @@ const Form = (props) => {
                         width: 600,
                         height: 700,
                         marginTop: 60
-                    }} alt="logo" />
+                    }} alt="logo" onMouseEnter={titleFx} className="title-image" />
                   <div id="home" className="flex-column flex-center">
                        
-                    <h1>WELCOME!!</h1>
+                    <h1 className="title-image" onMouseEnter={welcomeSound}>WELCOME!!</h1>
                       <>{/*FORM START*/}</>
                         <form onSubmit={handleSubmit}>
                             <h3>Name : </h3> <input type="text" name='name' className="input-name" onChange={handleChange} placeholder="Name" onClick={enterName} />    
