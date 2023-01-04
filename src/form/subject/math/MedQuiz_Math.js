@@ -173,8 +173,8 @@ const QuizMath = () => {
                     getValue = 2;
                 } else if(getMaxConfidenceValue === 'raised_hand') {
                     getValue = 3;
-                } else if(getMaxConfidenceValue === 'thumbs_up') {
-                    getValue = 4;
+                //} else if(getMaxConfidenceValue === 'thumbs_up') {
+                //    getValue = 4;
                 } else {
                     getValue = 0;
                 }

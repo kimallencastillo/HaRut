@@ -19,7 +19,7 @@ export const medMathQuestions = [
       ],
     },
     {
-      questionText: "What's 8 x 2? Answer: 24",
+      questionText: "What's 12 x 2? Answer: 24",
       answerOptions: [
         { symbol: '✌', answerText: '13', isCorrect: false },
         { symbol: '🤟', answerText: '24', isCorrect: true },

@@ -6,9 +6,12 @@ import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
 import hooray from '../music/hooray.mp3'
 import { useAudio } from 'react-use';
+import useSound from 'use-sound';
 import { Box, Button, LinearProgress, Paper, Switch, Typography, } from '@mui/material';
 import { deepPurple, grey, teal, green, red, blue, orange } from '@mui/material/colors';
-
+import click from '../music/click.mp3';
+import back from '../music/back.mp3';
+import submit from '../music/submit.mp3';
 /* Questions */ 
 
 // Math Question
@@ -41,6 +44,9 @@ const Score = ({data}) =>{
     let subject = params.subject;
     const historyParam = useNavigate();
     const [name, setName] = useState(userName);
+    const [clickFx] = useSound(click);
+    const [backFx] = useSound(back);
+    const [submitFx] = useSound(submit);
     //const [isFormVisible, setIsFormVisible] = useState(true);
     let SaveScore = false;
     let setPlayAudio = false;
@@ -62,7 +68,7 @@ const Score = ({data}) =>{
         // English
         if(subject === "english"){
             if(mode === "easy") {
-                questions = easyScieQuestions;
+                questions = easyEngQuestions;
             } else if(mode === "medium") {
                 questions = medEngQuestions;
             } else if(mode === "hard") {
@@ -72,7 +78,7 @@ const Score = ({data}) =>{
         // Science
         if(subject === "science"){
             if(mode === "easy") {
-                questions = easyMathQuestions;
+                questions = easyScieQuestions;
             } else if(mode === "medium") {
                 questions = medScieQuestions;
             } else if(mode === "hard") {
@@ -129,7 +135,9 @@ const Score = ({data}) =>{
         //alert("WORKING"); 
         }
         if(SaveScore) {
+            
             alert("SUBMITTED"); 
+            submitSound();
             /*history.push({ pathname: '/menu' });
             history.go(0);*/
             //setIsFormVisible(false);
@@ -164,7 +172,10 @@ const Score = ({data}) =>{
     //const audio = new Audio(hooray);
     //audio.play()
     const [isExploding, setIsExploding] = React.useState(true);
-    
+    const submitSound = ()=> {
+      const audio = new Audio(submit)
+      audio.play()
+    }
     const congrats = (congrats) =>{
         if(congrats){
             const audio = new Audio(hooray);
@@ -180,7 +191,8 @@ const Score = ({data}) =>{
       
     }, [setPlayAudio]);
     let ctr = 1;
-    // loop 
+    
+    //const []
 
     // create a function for audio to play once only
     return (
@@ -188,13 +200,14 @@ const Score = ({data}) =>{
         <div style={{marginTop: "50px"}}></div>
         <div className="container">
             <div id="highScores" className="flex-center flex-column">
-                <h1>{score} </h1>
+                <h2 className="title-image">Congratulations You got!!</h2>
+                <h1 className="title-image">{score} </h1>
                 {isExploding && <Confetti active={ isExploding } config={ config }
                 width={width}
                 height={height}
                 /> }
                 <span className="scores-h2">
-                <h2 >Enter your name below to save your score!</h2>
+                <h2 className="title-image">Enter your name below to save your score!</h2>
                 </span>
                 { /* Save Score */ }
                 <input type="text" className="score-name" style={{
@@ -206,8 +219,8 @@ const Score = ({data}) =>{
                 <Link to={{
                           pathname: "/category",
                           search: `?name=${ name }&age=${ age }`
-                        }} className="btn">Play Again</Link>
-                <a href="/" className="btn">Go Home<i className="fas fa-home"></i></a>  
+                        }} className="btn" onFocus={clickFx} >Play Again</Link>
+                <a href="/" className="btn" onFocus={backFx} >Go Home<i className="fas fa-home"></i></a>  
             
             </div>
         </div>

@@ -6,7 +6,7 @@ export const medQuestions = [
         { symbol: '✌', answerText: 'Mercury', isCorrect: false },
         { symbol: '🤟', answerText: 'Jupiter', isCorrect: false },
         { symbol: '✋', answerText: 'Pluto', isCorrect: true },
-        { symbol: '👍', answerText: 'Venus', isCorrect: false },
+        //{ symbol: '👍', answerText: 'Venus', isCorrect: false },
       ],
     },
     {
@@ -15,7 +15,7 @@ export const medQuestions = [
         { symbol: '✌', answerText: 'Leaves', isCorrect: false },
         { symbol: '🤟', answerText: 'Anther', isCorrect: true },
         { symbol: '✋', answerText: 'Stem', isCorrect: false },
-        { symbol: '👍', answerText: 'Roots', isCorrect: false },
+        //{ symbol: '👍', answerText: 'Roots', isCorrect: false },
       ],
     },
     {
@@ -23,8 +23,8 @@ export const medQuestions = [
       answerOptions: [
         { symbol: '✌', answerText: 'Claws', isCorrect: false },
         { symbol: '🤟', answerText: 'Feet', isCorrect: false },
-        { symbol: '✋', answerText: 'Beak', isCorrect: false },
-        { symbol: '👍', answerText: 'Wings', isCorrect: true },
+        { symbol: '✋', answerText: 'Wings', isCorrect: true },
+        //{ symbol: '👍', answerText: 'Wings', isCorrect: true },
       ],
     },
     {
@@ -33,7 +33,7 @@ export const medQuestions = [
         { symbol: '✌', answerText: 'Force', isCorrect: true },
         { symbol: '🤟', answerText: 'Mass', isCorrect: false },
         { symbol: '✋', answerText: 'Compression', isCorrect: false },
-        { symbol: '👍', answerText: 'Acceleration', isCorrect: false },
+        //{ symbol: '👍', answerText: 'Acceleration', isCorrect: false },
       ],
     },
     {
@@ -42,7 +42,7 @@ export const medQuestions = [
         { symbol: '✌', answerText: 'Herbivores ', isCorrect: false },
         { symbol: '🤟', answerText: 'Consumer', isCorrect: false },
         { symbol: '✋', answerText: 'Producers', isCorrect: true },
-        { symbol: '👍', answerText: 'Carnivores', isCorrect: false },
+        //{ symbol: '👍', answerText: 'Carnivores', isCorrect: false },
       ],
     },
     {
@@ -51,16 +51,16 @@ export const medQuestions = [
         { symbol: '✌', answerText: 'Hydrogen', isCorrect: false },
         { symbol: '🤟', answerText: 'Carbon dioxide', isCorrect: true },
         { symbol: '✋', answerText: 'Oxygen', isCorrect: false },
-        { symbol: '👍', answerText: 'Carbon Monoxide', isCorrect: false },
+        //{ symbol: '👍', answerText: 'Carbon Monoxide', isCorrect: false },
       ],
     },
     {
       questionText: 'What is the source of energy for producers?',
       answerOptions: [
-        { symbol: '✌', answerText: 'Water', isCorrect: false },
+        { symbol: '✌', answerText: 'The sun', isCorrect: true },
         { symbol: '🤟', answerText: 'The wind ', isCorrect: false },
         { symbol: '✋', answerText: 'The earth', isCorrect: false },
-        { symbol: '👍', answerText: 'The sun', isCorrect: true },
+        //{ symbol: '👍', answerText: 'The sun', isCorrect: true },
       ],
     },
 ]

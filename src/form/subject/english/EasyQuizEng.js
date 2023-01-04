@@ -31,7 +31,7 @@ import { hardQuestions } from './mode/Hard';
 import correctAns from '../../../music/correctAns.mp3';
 import wrongAns from '../../../music/wrongAns.mp3';
 
-const QuizScie = () => {
+const QuizEng = () => {
   const params = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop),
   });
@@ -171,10 +171,10 @@ const detect = async(net) => {
                 getValue = 1;
             } else if(getMaxConfidenceValue === 'love_you') {
                 getValue = 2;
-            } else if(getMaxConfidenceValue === 'raised_hand') {
-                getValue = 3;
-            } else if(getMaxConfidenceValue === 'thumbs_up') {
-                getValue = 4;
+            //} else if(getMaxConfidenceValue === 'raised_hand') {
+            //    getValue = 3;
+            //} else if(getMaxConfidenceValue === 'thumbs_up') {
+            //    getValue = 4;
             } else {
                 getValue = 0;
             }
@@ -511,4 +511,4 @@ return (
 }
 
 
-export default QuizScie;
+export default QuizEng;

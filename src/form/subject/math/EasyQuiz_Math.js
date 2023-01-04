@@ -171,10 +171,10 @@ const QuizMath = () => {
                     getValue = 1;
                 } else if(getMaxConfidenceValue === 'love_you') {
                     getValue = 2;
-                } else if(getMaxConfidenceValue === 'raised_hand') {
-                    getValue = 3;
-                } else if(getMaxConfidenceValue === 'thumbs_up') {
-                    getValue = 4;
+                //} else if(getMaxConfidenceValue === 'raised_hand') {
+                //    getValue = 3;
+                //} else if(getMaxConfidenceValue === 'thumbs_up') {
+                //    getValue = 4;
                 } else {
                     getValue = 0;
                 }

@@ -32,6 +32,19 @@ import Quiz_Math from './form/subject/math/Quiz_Math';
 import Quiz_Scie from './form/subject/science/QuizScie';
 import QuizHistory from './form/subject/history/QuizHistory';
 import Quiz_Eng from './form/subject/english/QuizEng';
+
+// Math Mode
+import EasyQuiz_Math from './form/subject/math/EasyQuiz_Math';
+import MedQuiz_Math from './form/subject/math/MedQuiz_Math';
+
+// Science Mode
+import EasyQuizScie from './form/subject/science/EasyQuizScie';
+import MedQuizScie from './form/subject/science/MedQuizScie';
+
+// Science Mode
+import EasyQuizEng from './form/subject/english/EasyQuizEng';
+import MedQuizEng from './form/subject/english/MedQuizEng';
+
 // Sounds
 import useSound from 'use-sound';
 import MathFx from './music/math.mp3';
@@ -43,6 +56,10 @@ import selcDif from './music/selectDifficulty.mp3';
 import mathTitle from './music/mathTitle.mp3';
 import englishTitle from './music/englishTitle.mp3';
 import scienceTitle from './music/scienceTitle.mp3';
+import easyMode from './music/easyMode.mp3';
+import averageMode from './music/averageMode.mp3';
+import hardMode from './music/hardMode.mp3';
+import back from './music/back.mp3';
 
 // Menu
 function App() {
@@ -73,6 +90,12 @@ function App() {
             <Route path="/quizEng" element={<EnglishQuiz/>} />
             <Route path='/quizEnglish' element={<Quiz_Eng/>} />
             <Route path='/testGesture/:name/:age' element={<TestGesture/>} />
+            <Route path='/easyQuiz_Math' element={<EasyQuiz_Math/>} />
+            <Route path="/medQuiz_Math" element={<MedQuiz_Math/>} />
+            <Route path='/easyQuizEng' element={<EasyQuizEng/>} />
+            <Route path="/medQuizEng" element={<MedQuizEng/>} />
+            <Route path='/easyQuizScie' element={<EasyQuizScie/>} />
+            <Route path="/medQuizScie" element={<MedQuizScie/>} />
             <Route path="*" element={<p>ERROR NOT FOUND</p>} />
         </Routes>
       </BrowserRouter>
@@ -124,6 +147,13 @@ const Category = () => {
     audio.play();
     //console.log("Working");
   }
+
+  // Science Sound
+  const backFxSound = () =>{
+    const audio = new Audio(back);
+    audio.play();
+    //console.log("Working");
+  }
  
     return (
       <nav className="catg">
@@ -147,7 +177,7 @@ const Category = () => {
                 <button onClick={goHome} className="btn-accept"
                 style={{
                   marginTop: "55px"
-                }}>Back<i className="fas fa-home"></i></button>  
+                }} onFocus={backFxSound}>Back<i className="fas fa-home"></i></button>  
           </div>
         </div>
       </nav>
@@ -168,7 +198,11 @@ const EnglishQuiz = (props) => {
   const [newName, setName] = useState(name);
   const [mode, setMode] = useState("RECOMMENDED");
   const [selectDifficulty] = useSound(selcDif);
+  const [easyFx] = useSound(easyMode);
+  const [averageFx] = useSound(averageMode);
+  const [hardFx] = useSound(hardMode);
   const [engSound] = useSound(englishTitle);
+  const [backSound] = useSound(back);
   return (
     <nav className="mode">  
       <div className="container_quiz">
@@ -177,11 +211,11 @@ const EnglishQuiz = (props) => {
           <h1 className="title-image" onMouseEnter={selectDifficulty}>Select Difficulty</h1>
             <div className="level-container">
             <Link to={{
-              pathname: "/quizEnglish",
+              pathname: "/easyQuizEng",
               search: `?mode=${ "easy" }&name=${ newName }&age=${ newAge }&subject=${ "english"}`
             }} 
             style={{ background: (newAge <= 8) ? "#4CBB17" : red[400]  }}
-            className="btn-easy"> Easy </Link> 
+            className="btn-easy" onFocus={easyFx} > Easy </Link> 
 
             {(newAge <= 8) && <span 
             ><ArrowCircleLeftIcon
@@ -191,11 +225,11 @@ const EnglishQuiz = (props) => {
 
             <div className="level-container" >
             <Link to={{
-              pathname: "/quizEnglish",
+              pathname: "/medQuizEng",
               search: `?mode=${ "medium" }&name=${ newName }&age=${ newAge }&subject=${ "english"}`
             }} 
             style={{ backgroundColor: (newAge >= 9  && newAge <= 12  ) ? "#4CBB17" : red[400]  }}
-            className="btn-med"> Average  </Link>
+            className="btn-med" onFocus={averageFx}> Average  </Link>
             {(newAge >= 9  && newAge <= 12) && <span 
             ><ArrowCircleLeftIcon
             className='level-container-icon' 
@@ -208,7 +242,7 @@ const EnglishQuiz = (props) => {
               search: `?mode=${ "hard" }&name=${ newName }&age=${ newAge }&subject=${ "english"}`
             }}
             style={{ backgroundColor: (newAge >= 13) ? "#4CBB17" : red[400] }}
-            className="btn-hard"> Difficult </Link>
+            className="btn-hard" onFocus={hardFx}> Difficult </Link>
             {(newAge >= 13) && <span 
             ><ArrowCircleLeftIcon
             className='level-container-icon' 
@@ -220,7 +254,7 @@ const EnglishQuiz = (props) => {
                         }} className="btn-accept"
                 style={{
                   marginTop: "55px"
-                }}>Back<i className="fas fa-home"></i></Link>  
+                }} onFocus={backSound}>Back<i className="fas fa-home"></i></Link>  
             </div>
         </div>
     </nav>
@@ -240,6 +274,10 @@ const MathQuiz = (props) => {
   const [mode, setMode] = useState("RECOMMENDED");
   const [selectDifficulty] = useSound(selcDif);
   const [mathSound] = useSound(mathTitle);
+  const [easyFx] = useSound(easyMode);
+  const [averageFx] = useSound(averageMode);
+  const [hardFx] = useSound(hardMode);
+  const [backSound] = useSound(back);
   return (
     <nav className="mode">  
       <div className="container_quiz">
@@ -248,11 +286,11 @@ const MathQuiz = (props) => {
           <h1 className="title-image" onMouseEnter={selectDifficulty}>Select Difficulty</h1>
             <div className="level-container">
             <Link to={{
-              pathname: "/quizMath",
+              pathname: "/easyQuiz_Math",
               search: `?mode=${ "easy" }&name=${ newName }&age=${ newAge }&subject=${ "math"}`
             }} 
             style={{ background: (newAge <= 8) ? "#4CBB17" : red[400]  }}
-            className="btn-easy"> Easy </Link> 
+            className="btn-easy" onFocus={easyFx} > Easy </Link> 
 
             {(newAge <= 8) && <span 
             ><ArrowCircleLeftIcon
@@ -262,11 +300,11 @@ const MathQuiz = (props) => {
 
             <div className="level-container" >
             <Link to={{
-              pathname: "/quizMath",
+              pathname: "/MedQuiz_Math",
               search: `?mode=${ "medium" }&name=${ newName }&age=${ newAge }&subject=${ "math"}`
             }} 
             style={{ backgroundColor: (newAge >= 9  && newAge <= 12  ) ? "#4CBB17" : red[400]  }}
-            className="btn-med"> Average  </Link>
+            className="btn-med" onFocus={averageFx} > Average  </Link>
             {(newAge >= 9  && newAge <= 12) && <span 
             ><ArrowCircleLeftIcon
             className='level-container-icon' 
@@ -279,7 +317,7 @@ const MathQuiz = (props) => {
               search: `?mode=${ "hard" }&name=${ newName }&age=${ newAge }&subject=${ "math"}`
             }}
             style={{ backgroundColor: (newAge >= 13) ? "#4CBB17" : red[400] }}
-            className="btn-hard"> Difficult </Link>
+            className="btn-hard" onFocus={hardFx} > Difficult </Link>
             {(newAge >= 13) && <span 
             ><ArrowCircleLeftIcon
             className='level-container-icon' 
@@ -291,7 +329,7 @@ const MathQuiz = (props) => {
                         }} className="btn-accept"
                 style={{
                   marginTop: "55px"
-                }}>Back<i className="fas fa-home"></i></Link>  
+                }} onFocus={backSound}>Back<i className="fas fa-home"></i></Link>  
             
         </div>
       </div>
@@ -313,6 +351,10 @@ const ScieQuiz = (props) => {
   const [mode, setMode] = useState("RECOMMENDED");
   const [selectDifficulty] = useSound(selcDif);
   const [scieSound] = useSound(scienceTitle);
+  const [easyFx] = useSound(easyMode);
+  const [averageFx] = useSound(averageMode);
+  const [hardFx] = useSound(hardMode);
+  const [backSound] = useSound(back);
   return (
     <nav className="mode">  
       <div className="container_quiz">
@@ -321,11 +363,11 @@ const ScieQuiz = (props) => {
           <h1 className="title-image" onMouseEnter={selectDifficulty}>Select Difficulty</h1>
             <div className="level-container">
             <Link to={{
-              pathname: "/quizScie",
+              pathname: "/easyQuizScie",
               search: `?mode=${ "easy" }&name=${ newName }&age=${ newAge }&subject=${ "science"}`
             }} 
             style={{ background: (newAge <= 8) ? "#4CBB17" : red[400]  }}
-            className="btn-easy"> Easy </Link> 
+            className="btn-easy" onFocus={easyFx} > Easy </Link> 
 
             {(newAge <= 8) && <span 
             ><ArrowCircleLeftIcon
@@ -335,11 +377,11 @@ const ScieQuiz = (props) => {
 
             <div className="level-container" >
             <Link to={{
-              pathname: "/quizScie",
+              pathname: "/medQuizScie",
               search: `?mode=${ "medium" }&name=${ newName }&age=${ newAge }&subject=${ "science"}`
             }} 
             style={{ backgroundColor: (newAge >= 9  && newAge <= 12  ) ? "#4CBB17" : red[400]  }}
-            className="btn-med"> Average  </Link>
+            className="btn-med" onFocus={averageFx} > Average  </Link>
             {(newAge >= 9  && newAge <= 12) && <span 
             ><ArrowCircleLeftIcon
             className='level-container-icon' 
@@ -352,7 +394,7 @@ const ScieQuiz = (props) => {
               search: `?mode=${ "hard" }&name=${ newName }&age=${ newAge }&subject=${ "science"}`
             }}
             style={{ backgroundColor: (newAge >= 13) ? "#4CBB17" : red[400] }}
-            className="btn-hard"> Difficult </Link>
+            className="btn-hard" onFocus={hardFx} > Difficult </Link>
             {(newAge >= 13) && <span 
             ><ArrowCircleLeftIcon
             className='level-container-icon' 
@@ -364,7 +406,7 @@ const ScieQuiz = (props) => {
                         }} className="btn-accept"
                 style={{
                   marginTop: "55px"
-                }}>Back<i className="fas fa-home"></i></Link>  
+                }} onFocus={backSound}>Back<i className="fas fa-home"></i></Link>  
             
         </div>
       </div>
