@@ -88,9 +88,10 @@
     width: 30rem;
     text-align: center;
     text-decoration: none;
-    color: rgb(28, 26, 26);
-    background: linear-gradient(90deg, rgb(18, 92, 255) 0%, rgb(0, 102, 255) 100%);
+    color: rgb(8, 8, 8);
+    background: linear-gradient(90deg, rgb(46, 218, 255) 0%, rgb(46, 218, 255) 100%);
     border-radius: 9px;
+    border: none;
 }
 
 .btn-accept:hover {

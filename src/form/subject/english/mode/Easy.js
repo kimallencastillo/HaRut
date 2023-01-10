@@ -1,5 +1,4 @@
 // Questions List
-// random question
 
 
 export const easyQuestions = [

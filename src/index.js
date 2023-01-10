@@ -18,7 +18,7 @@ import ScoreBoard from './form/ScoreBoard'
 import TestGesture from './Play/testGesture'
 // CSS
 import './App.css';
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import {BrowserRouter , Routes,Route, useParams } from 'react-router-dom';
 import { Link , useNavigate} from 'react-router-dom';
 import { history } from './utils/history';
@@ -64,10 +64,7 @@ import back from './music/back.mp3';
 // Menu
 function App() {
   const currentPage = window.location.pathname;
-  //if(currentPage === '/') {
-  //  history.push('/form');
-  //  history.go(0)
-  //}
+
   return (
     <div className="App">   
       <header className="App-header">
@@ -131,30 +128,34 @@ const Category = () => {
   const engFx = () =>{
     const audio = new Audio(EngFx);
     audio.play();
-    //console.log("Working");
+  
   }
 
   // Science Sound
   const scieFx = () =>{
     const audio = new Audio(ScieFx);
     audio.play();
-    //console.log("Working");
+  
   }
   
   // Science Sound
   const catgFxSound = () =>{
     const audio = new Audio(catgFx);
     audio.play();
-    //console.log("Working");
+   
   }
 
   // Science Sound
   const backFxSound = () =>{
     const audio = new Audio(back);
     audio.play();
-    //console.log("Working");
+  
   }
- 
+
+  const [count, setCount] = useState(0);
+  const [soundState, setsoundState] = useState(false);
+
+  
     return (
       <nav className="catg">
         <div className="container">

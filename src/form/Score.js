@@ -191,44 +191,36 @@ const Score = ({data}) =>{
       
     }, [setPlayAudio]);
     let ctr = 1;
-    
-    //const []
 
-    // create a function for audio to play once only
     return (
         <>
         <div style={{marginTop: "50px"}}></div>
         <div className="container">
             <div id="highScores" className="flex-center flex-column">
-                <h2 className="title-image">Congratulations You got!!</h2>
+                <h1 className="title-image">Congratulations You got!!</h1>
                 <h1 className="title-image">{score} </h1>
                 {isExploding && <Confetti active={ isExploding } config={ config }
                 width={width}
                 height={height}
                 /> }
                 <span className="scores-h2">
-                <h2 className="title-image">Enter your name below to save your score!</h2>
+                <h1 className="title-image">Enter your name below to save your score!</h1>
                 </span>
                 { /* Save Score */ }
                 <input type="text" className="score-name" style={{
                     textAlign: 'center'
                 }} placeholder='Enter your Name ...' value={name} onChange={(e)=>{setName(e.target.value)}} />
                 <br/>
-                <button className="btn" onClick={savePlayerScore}> Submit </button>
+                <button className="btn-submit" onClick={savePlayerScore}> Submit </button>
               
                 <Link to={{
                           pathname: "/category",
                           search: `?name=${ name }&age=${ age }`
-                        }} className="btn" onFocus={clickFx} >Play Again</Link>
-                <a href="/" className="btn" onFocus={backFx} >Go Home<i className="fas fa-home"></i></a>  
+                        }} className="btn-play" onFocus={clickFx} >Play Again</Link>
+                <a href="/" className="btn-home" onFocus={backFx} >Go Home<i className="fas fa-home"></i></a>  
             
             </div>
         </div>
-
-     
- 
-  
-          
           {/* Question */}
   
          {/* End Question */}
@@ -236,7 +228,7 @@ const Score = ({data}) =>{
         {/* Questions */}
         <Box sx={{ mt: 4 }}>
             {/* Question */}
-              <h2 className='question-text'>Correct answers</h2> 
+              <h1 className='question-text'>Correct answers</h1> 
         </Box>
         <Box
           sx={{ mt: 4, flexGrow: 1, display: 'flex', flexDirection: 'column' }}
@@ -270,16 +262,3 @@ const Score = ({data}) =>{
 }
 
 export default Score;
-
-/*
- background: showCorrectAns
-                  ? option.isCorrect
-                    ? green[700]
-                    : red[700]
-                  : showSelectAns
-                  ? selectedGesture - 1 === index
-                    ? blue[700]
-                    : blue[500]
-                  : blue[500],
-                color: grey[50],
-                */
